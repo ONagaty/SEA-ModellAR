@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="eu.cessar.ct.runtime.cessarClasspathContributor" name="cessarClasspathContributor" schema="schema/cessarClasspathContributor.exsd"/>
+   <extension-point id="eu.cessar.ct.runtime.cessarTask" name="cessarTask" schema="schema/cessarTask.exsd"/>
+   <extension
+         point="org.eclipse.jdt.core.classpathContainerInitializer">
+      <classpathContainerInitializer
+            class="eu.cessar.ct.runtime.internal.classpath.GenericClasspathContainerInitializer"
+            id="eu.cessar.ct.runtime.classpath.genericClasspathContainer">
+      </classpathContainerInitializer>
+      <classpathContainerInitializer
+            class="eu.cessar.ct.runtime.internal.classpath.ProjectClasspathContainerInitializer"
+            id="eu.cessar.ct.runtime.classpath.projectClasspathContainer">
+      </classpathContainerInitializer>
+      <classpathContainerInitializer
+            class="eu.cessar.ct.runtime.internal.classpath.ModelClasspathContainerInitializer"
+            id="eu.cessar.ct.runtime.classpath.modelClasspathContainer">
+      </classpathContainerInitializer>
+   </extension>
+   <extension
+         point="eu.cessar.ct.runtime.cessarClasspathContributor">
+      <provider
+            class="eu.cessar.ct.runtime.internal.classpath.EclipsePluginsClasspathContributor"
+            container="eu.cessar.ct.runtime.classpath.genericClasspathContainer"
+            id="eu.cessar.ct.runtime.classpath.eclipsePlugins">
+      </provider>
+      <provider
+            class="eu.cessar.ct.runtime.internal.classpath.CessarPluginsClasspathContributor"
+            container="eu.cessar.ct.runtime.classpath.genericClasspathContainer"
+            id="eu.cessar.ct.runtime.classpath.cessarPlugins">
+      </provider>
+       <provider
+            class="eu.cessar.ct.runtime.internal.classpath.AutosarModelClasspathContributor"
+            container="eu.cessar.ct.runtime.classpath.modelClasspathContainer"
+            id="eu.cessar.ct.runtime.classpath.modelContributor">
+      </provider>
+        <provider
+             class="eu.cessar.ct.runtime.internal.classpath.ProjectLibrariesClasspathContributor"
+             container="eu.cessar.ct.runtime.classpath.projectClasspathContainer"
+             id="eu.cessar.ct.runtime.classpath.projectLibrariesContributor">
+       </provider>
+        <provider
+              class="eu.cessar.ct.runtime.internal.classpath.PropertyPluginsClasspathContributor"
+              container="eu.cessar.ct.runtime.classpath.genericClasspathContainer"
+              id="eu.cessar.ct.runtime.classpath.propertyPlugins">
+        </provider>
+        <provider
+              class="eu.cessar.ct.runtime.internal.classpath.PMClasspathContributor"
+              container="eu.cessar.ct.runtime.classpath.modelClasspathContainer"
+              id="eu.cessar.ct.runtime.classpath.pmLibraryContributor">
+        </provider>
+   </extension>
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            file-extensions="pluget"
+            id="eu.cessar.ct.runtime.contenttype.pluget"
+            name="%_UI_PlugetFiles_label"
+            priority="normal">
+      </content-type>
+   </extension>
+   <extension
+         point="eu.cessar.ct.runtime.cessarTask">
+      <task
+            factory="eu.cessar.ct.runtime.internal.execution.pluget.PlugetTaskManagerFactory"
+            id="pluget">
+      </task>
+      <task
+            factory="eu.cessar.ct.runtime.internal.execution.pluget.PlugetClassTaskManagerFactory"
+            id="pluget.class">
+      </task>
+      <task
+            factory="eu.cessar.ct.runtime.internal.execution.JavaMainManagerFactory"
+            id="java.main.class">
+      </task>
+      <task
+            factory="eu.cessar.ct.runtime.internal.execution.pluget.PlugetExternalTaskManagerFactory"
+            id="pluget.external">
+      </task>
+   </extension>
+   <extension
+         point="eu.cessar.ct.core.platform.sdkService">
+      <service
+            provider="eu.cessar.ct.runtime.internal.execution.ExecutionServiceProvider"
+            serviceID="eu.cessar.ct.sdk.runtime.ExecutionService$Service">
+      </service>
+      <service
+            provider="eu.cessar.ct.runtime.internal.utils.ProjectUtilsServiceProvider"
+            serviceID="eu.cessar.ct.sdk.utils.ProjectUtils$Service">
+      </service>
+   </extension>
+    <extension
+         id="eu.cessar.ct.plugetRunner"
+         name="PlugetRunner application"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="eu.cessar.ct.runtime.internal.execution.pluget.PlugetRunner">
+         </run>
+      </application>
+   </extension>
+
+  <extension
+      point="org.eclipse.core.runtime.preferences">
+   <initializer
+         class="eu.cessar.ct.runtime.internal.execution.CessarPreferenceInitializer">
+   </initializer>
+</extension>
+  <extension
+        point="eu.cessar.ct.cid.extension">
+      <datatype
+            class="eu.cessar.ct.runtime.internal.AutosarDatatype"
+            id="eu.cessar.ct.cid.datatype.AutosarDatatype">
+      </datatype>
+  </extension>
+
+
+
+
+</plugin>

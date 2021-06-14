@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %plugin.name
+Bundle-SymbolicName: eu.cessar.ct.core.security.license
+Bundle-Localization: plugin
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: eu.cessar.ct.core.security.license.internal.CessarPluginActivator
+Require-Bundle: org.eclipse.core.runtime,
+ com.continental.license,
+ eu.cessar.ct.license
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: eu.cessar.ct.core.security.license,
+ eu.cessar.ct.core.security.license.internal;x-internal:=true
+Bundle-Vendor: %provider.name

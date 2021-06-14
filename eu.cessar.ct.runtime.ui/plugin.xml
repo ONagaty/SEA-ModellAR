@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+<extension 
+       point="org.eclipse.jdt.ui.classpathContainerPage">
+      <classpathContainerPage
+          id="eu.cessar.ct.runtime.classpath.genericClasspathContainer"
+          name="ClasspathPropertiesPage"
+          class="eu.cessar.ct.runtime.ui.internal.classpath.CessarLibrariesClasspathContainerPage"/>
+      <classpathContainerPage
+            class="eu.cessar.ct.runtime.ui.internal.classpath.SimpleClasspathContainerPage:model"
+            id="eu.cessar.ct.runtime.classpath.modelClasspathContainer"
+            name="ModelClasspathContainerPage">
+      </classpathContainerPage>
+      <classpathContainerPage
+            class="eu.cessar.ct.runtime.ui.internal.classpath.SimpleClasspathContainerPage:project"
+            id="eu.cessar.ct.runtime.classpath.projectClasspathContainer"
+            name="ProjectClasspathContainerPage">
+      </classpathContainerPage>
+   </extension>
+<extension
+      point="eu.cessar.ct.runtime.cessarClasspathContributor">
+   <provider
+         class="eu.cessar.ct.runtime.ui.internal.classpath.CessarUIPluginsClasspathContributor"
+         container="eu.cessar.ct.runtime.classpath.genericClasspathContainer"
+         id="eu.cessar.ct.runtime.ui.classpath.sdkUIClasspathContributor">
+   </provider>
+</extension>
+<extension
+      point="org.eclipse.ui.menus">
+   <menuContribution
+         allPopups="false"
+         locationURI="menu:org.eclipse.ui.main.menu?after=eu.cessar.ct.configuration.menu">
+      <menu
+            id="eu.cessar.ct.runtime.ui.automation"
+            label="Automation">
+         <dynamic
+               class="eu.cessar.ct.runtime.ui.execution.AutomationDynamicMenu"
+               id="eu.cessar.ct.runtime.ui.dynamicSubMenu">
+         </dynamic>
+      </menu>
+   </menuContribution>
+</extension>
+<extension
+      point="org.eclipse.ui.commands">
+   <command
+         defaultHandler="eu.cessar.ct.runtime.ui.execution.AutomationRunPlugetHandler"
+         id="eu.cessar.ct.runtime.ui.automationCommand"
+         name="Automation command">
+      <commandParameter
+            id="automationID"
+            name="automationID"
+            optional="true">
+      </commandParameter>
+   </command>
+</extension>
+<extension
+      point="eu.cessar.ct.cid.ui.edit">
+      <datatype
+            class="eu.cessar.ct.runtime.ui.internal.AutosarDatatypeEditor"
+            datatypeid="eu.cessar.ct.cid.datatype.AutosarDatatype"
+            id="eu.cessar.ct.runtime.ui.AutosarDatatypeEditor">
+      </datatype>
+</extension>
+</plugin>

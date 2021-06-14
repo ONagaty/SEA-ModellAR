@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gautosar"
+    nsURI="http://artop.org/gautosar" nsPrefix="gar">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="modelPluginVersion" value="2.0.0"/>
+    <details key="editPluginVersion" value="2.0.0"/>
+  </eAnnotations>
+  <eSubpackages name="ggenericstructure" nsURI="http://artop.org/gautosar/gs" nsPrefix="ggs">
+    <eSubpackages name="gprimitivetypes" nsURI="http://artop.org/gautosar/gs/pt" nsPrefix="gpt">
+      <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="java.lang.String"/>
+      <eClassifiers xsi:type="ecore:EDataType" name="Boolean" instanceClassName="java.lang.Boolean"/>
+      <eClassifiers xsi:type="ecore:EDataType" name="Float" instanceClassName="java.lang.Double"/>
+      <eClassifiers xsi:type="ecore:EDataType" name="Integer" instanceClassName="java.lang.Integer"/>
+      <eClassifiers xsi:type="ecore:EDataType" name="DateTime" instanceClassName="javax.xml.datatype.XMLGregorianCalendar"/>
+      <eClassifiers xsi:type="ecore:EDataType" name="UnlimitedNatural" instanceClassName="java.math.BigInteger"/>
+    </eSubpackages>
+    <eSubpackages name="ginfrastructure" nsURI="http://artop.org/gautosar/gs/in" nsPrefix="gin">
+      <eClassifiers xsi:type="ecore:EClass" name="GARObject" abstract="true" interface="true">
+        <eOperations name="getChecksum" eType="#//ggenericstructure/gprimitivetypes/String"/>
+        <eOperations name="setChecksum">
+          <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/String"/>
+        </eOperations>
+        <eOperations name="getTimestamp" eType="#//ggenericstructure/gprimitivetypes/DateTime"/>
+        <eOperations name="setTimestamp">
+          <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/DateTime"/>
+        </eOperations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="GIdentifiable" abstract="true" interface="true"
+          eSuperTypes="#//ggenericstructure/ginfrastructure/GARObject">
+        <eOperations name="getShortName" eType="#//ggenericstructure/gprimitivetypes/String"/>
+        <eOperations name="setShortName">
+          <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/String"/>
+        </eOperations>
+        <eOperations name="getCategory" eType="#//ggenericstructure/gprimitivetypes/String"/>
+        <eOperations name="setCategory">
+          <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/String"/>
+        </eOperations>
+        <eOperations name="getExtensions">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eGenericType>
+        </eOperations>
+        <eOperations name="getUuid" eType="#//ggenericstructure/gprimitivetypes/String"/>
+        <eOperations name="setUuid">
+          <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/String"/>
+        </eOperations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="GARPackage" abstract="true" interface="true"
+          eSuperTypes="#//ggenericstructure/ginfrastructure/GIdentifiable">
+        <eOperations name="getSubPackages">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+            <eTypeArguments>
+              <eUpperBound eClassifier="#//ggenericstructure/ginfrastructure/GARPackage"/>
+            </eTypeArguments>
+          </eGenericType>
+        </eOperations>
+        <eOperations name="getElements">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+            <eTypeArguments>
+              <eUpperBound eClassifier="#//ggenericstructure/ginfrastructure/GPackageableElement"/>
+            </eTypeArguments>
+          </eGenericType>
+        </eOperations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="GAUTOSAR" abstract="true" interface="true">
+        <eOperations name="getMixed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMap"/>
+        <eOperations name="getArPackages">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+            <eTypeArguments>
+              <eUpperBound eClassifier="#//ggenericstructure/ginfrastructure/GARPackage"/>
+            </eTypeArguments>
+          </eGenericType>
+        </eOperations>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="GPackageableElement" abstract="true"
+          interface="true" eSuperTypes="#//ggenericstructure/ginfrastructure/GIdentifiable"/>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="gecucparameterdef" nsURI="http://artop.org/gautosar/pd" nsPrefix="gpd">
+    <eClassifiers xsi:type="ecore:EClass" name="GParamConfMultiplicity" abstract="true"
+        interface="true" eSuperTypes="#//ggenericstructure/ginfrastructure/GARObject">
+      <eOperations name="getLowerMultiplicityAsString" eType="#//ggenericstructure/gprimitivetypes/String"/>
+      <eOperations name="setLowerMultiplicityAsString">
+        <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/String"/>
+      </eOperations>
+      <eOperations name="getUpperMultiplicityAsString" eType="#//ggenericstructure/gprimitivetypes/String"/>
+      <eOperations name="setUpperMultiplicityAsString">
+        <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/String"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GContainerDef" abstract="true" interface="true"
+        eSuperTypes="#//ggenericstructure/ginfrastructure/GIdentifiable #//gecucparameterdef/GParamConfMultiplicity">
+      <eOperations name="getPostBuildChangeable" eType="#//ggenericstructure/gprimitivetypes/Boolean"/>
+      <eOperations name="setPostBuildChangeable">
+        <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/Boolean"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GModuleDef" abstract="true" interface="true"
+        eSuperTypes="#//ggenericstructure/ginfrastructure/GPackageableElement #//gecucparameterdef/GParamConfMultiplicity">
+      <eOperations name="getRefinedModuleDef" eType="#//gecucparameterdef/GModuleDef"/>
+      <eOperations name="setRefinedModuleDef">
+        <eParameters name="value" eType="#//gecucparameterdef/GModuleDef"/>
+      </eOperations>
+      <eOperations name="getContainers">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//gecucparameterdef/GContainerDef"/>
+          </eTypeArguments>
+        </eGenericType>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GCommonConfigurationAttributes" abstract="true"
+        interface="true" eSuperTypes="#//ggenericstructure/ginfrastructure/GIdentifiable">
+      <eOperations name="getOrigin" eType="#//ggenericstructure/gprimitivetypes/String"/>
+      <eOperations name="setOrigin">
+        <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/String"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GConfigParameter" abstract="true"
+        interface="true" eSuperTypes="#//gecucparameterdef/GParamConfMultiplicity #//gecucparameterdef/GCommonConfigurationAttributes">
+      <eOperations name="getSymbolicNameValue" eType="#//ggenericstructure/gprimitivetypes/Boolean"/>
+      <eOperations name="setSymbolicNameValue">
+        <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/Boolean"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GConfigReference" abstract="true"
+        interface="true" eSuperTypes="#//gecucparameterdef/GParamConfMultiplicity #//gecucparameterdef/GCommonConfigurationAttributes"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GParamConfContainerDef" abstract="true"
+        interface="true" eSuperTypes="#//gecucparameterdef/GContainerDef">
+      <eOperations name="getParameters">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//gecucparameterdef/GConfigParameter"/>
+          </eTypeArguments>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="getReferences">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//gecucparameterdef/GConfigReference"/>
+          </eTypeArguments>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="getSubContainers">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//gecucparameterdef/GContainerDef"/>
+          </eTypeArguments>
+        </eGenericType>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GChoiceContainerDef" abstract="true"
+        interface="true" eSuperTypes="#//gecucparameterdef/GContainerDef">
+      <eOperations name="getChoices">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//gecucparameterdef/GParamConfContainerDef"/>
+          </eTypeArguments>
+        </eGenericType>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GBooleanParamDef" abstract="true"
+        interface="true" eSuperTypes="#//gecucparameterdef/GConfigParameter"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GIntegerParamDef" abstract="true"
+        interface="true" eSuperTypes="#//gecucparameterdef/GConfigParameter"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GFloatParamDef" abstract="true" interface="true"
+        eSuperTypes="#//gecucparameterdef/GConfigParameter"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GEnumerationParamDef" abstract="true"
+        interface="true" eSuperTypes="#//gecucparameterdef/GConfigParameter">
+      <eOperations name="getLiterals">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//gecucparameterdef/GEnumerationLiteralDef"/>
+          </eTypeArguments>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="getDefaultValue" eType="#//ggenericstructure/gprimitivetypes/String"/>
+      <eOperations name="setDefaultValue">
+        <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/String"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GEnumerationLiteralDef" abstract="true"
+        interface="true" eSuperTypes="#//ggenericstructure/ginfrastructure/GIdentifiable"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GAbstractStringParamDef" abstract="true"
+        interface="true" eSuperTypes="#//gecucparameterdef/GConfigParameter"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GStringParamDef" abstract="true" interface="true"
+        eSuperTypes="#//gecucparameterdef/GAbstractStringParamDef"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GLinkerSymbolDef" abstract="true"
+        interface="true" eSuperTypes="#//gecucparameterdef/GAbstractStringParamDef"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GFunctionNameDef" abstract="true"
+        interface="true" eSuperTypes="#//gecucparameterdef/GAbstractStringParamDef"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GReferenceDef" abstract="true" interface="true"
+        eSuperTypes="#//gecucparameterdef/GConfigReference">
+      <eOperations name="getDestination" eType="#//gecucparameterdef/GParamConfContainerDef"/>
+      <eOperations name="setDestination">
+        <eParameters name="value" eType="#//gecucparameterdef/GParamConfContainerDef"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GSymbolicNameReferenceDef" abstract="true"
+        interface="true" eSuperTypes="#//gecucparameterdef/GReferenceDef"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GInstanceReferenceDef" abstract="true"
+        interface="true" eSuperTypes="#//gecucparameterdef/GConfigReference">
+      <eOperations name="getDestinationType" eType="#//ggenericstructure/gprimitivetypes/String"/>
+      <eOperations name="setDestinationType">
+        <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/String"/>
+      </eOperations>
+      <eOperations name="getDestinationContext" eType="#//ggenericstructure/gprimitivetypes/String"/>
+      <eOperations name="setDestinationContext">
+        <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/String"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GForeignReferenceDef" abstract="true"
+        interface="true" eSuperTypes="#//gecucparameterdef/GConfigReference">
+      <eOperations name="getDestinationType" eType="#//ggenericstructure/gprimitivetypes/String"/>
+      <eOperations name="setDestinationType">
+        <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/String"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GChoiceReferenceDef" abstract="true"
+        interface="true" eSuperTypes="#//gecucparameterdef/GConfigReference">
+      <eOperations name="getDestinations">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//gecucparameterdef/GParamConfContainerDef"/>
+          </eTypeArguments>
+        </eGenericType>
+      </eOperations>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="gecucdescription" nsURI="http://artop.org/gautosar/ed" nsPrefix="ged">
+    <eClassifiers xsi:type="ecore:EClass" name="GModuleConfiguration" abstract="true"
+        interface="true" eSuperTypes="#//ggenericstructure/ginfrastructure/GPackageableElement">
+      <eOperations name="getDefinition" eType="#//gecucparameterdef/GModuleDef"/>
+      <eOperations name="setDefinition">
+        <eParameters name="value" eType="#//gecucparameterdef/GModuleDef"/>
+      </eOperations>
+      <eOperations name="getContainers">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//gecucdescription/GContainer"/>
+          </eTypeArguments>
+        </eGenericType>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GContainer" abstract="true" interface="true"
+        eSuperTypes="#//ggenericstructure/ginfrastructure/GIdentifiable">
+      <eOperations name="getDefinition" eType="#//gecucparameterdef/GContainerDef"/>
+      <eOperations name="setDefinition">
+        <eParameters name="value" eType="#//gecucparameterdef/GContainerDef"/>
+      </eOperations>
+      <eOperations name="getParameterValues">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//gecucdescription/GParameterValue"/>
+          </eTypeArguments>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="getReferenceValues">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//gecucdescription/GConfigReferenceValue"/>
+          </eTypeArguments>
+        </eGenericType>
+      </eOperations>
+      <eOperations name="getSubContainers">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+          <eTypeArguments>
+            <eUpperBound eClassifier="#//gecucdescription/GContainer"/>
+          </eTypeArguments>
+        </eGenericType>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GParameterValue" abstract="true" interface="true"
+        eSuperTypes="#//ggenericstructure/ginfrastructure/GARObject">
+      <eOperations name="getDefinition" eType="#//gecucparameterdef/GConfigParameter"/>
+      <eOperations name="setDefinition">
+        <eParameters name="value" eType="#//gecucparameterdef/GConfigParameter"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GConfigReferenceValue" abstract="true"
+        interface="true" eSuperTypes="#//ggenericstructure/ginfrastructure/GARObject">
+      <eOperations name="getDefinition" eType="#//gecucparameterdef/GConfigReference"/>
+      <eOperations name="setDefinition">
+        <eParameters name="value" eType="#//gecucparameterdef/GConfigReference"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GReferenceValue" abstract="true" interface="true"
+        eSuperTypes="#//gecucdescription/GConfigReferenceValue">
+      <eOperations name="getValue" eType="#//ggenericstructure/ginfrastructure/GIdentifiable"/>
+      <eOperations name="setValue">
+        <eParameters name="value" eType="#//ggenericstructure/ginfrastructure/GIdentifiable"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GInstanceReferenceValue" abstract="true"
+        interface="true" eSuperTypes="#//gecucdescription/GConfigReferenceValue"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GBooleanValue" abstract="true" interface="true"
+        eSuperTypes="#//gecucdescription/GParameterValue">
+      <eOperations name="getValue" eType="#//ggenericstructure/gprimitivetypes/Boolean"/>
+      <eOperations name="setValue">
+        <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/Boolean"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GEnumerationValue" abstract="true"
+        interface="true" eSuperTypes="#//gecucdescription/GParameterValue">
+      <eOperations name="getValue" eType="#//ggenericstructure/gprimitivetypes/String"/>
+      <eOperations name="setValue">
+        <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/String"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GFloatValue" abstract="true" interface="true"
+        eSuperTypes="#//gecucdescription/GParameterValue">
+      <eOperations name="getValue" eType="#//ggenericstructure/gprimitivetypes/Float"/>
+      <eOperations name="setValue">
+        <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/Float"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GIntegerValue" abstract="true" interface="true"
+        eSuperTypes="#//gecucdescription/GParameterValue">
+      <eOperations name="getValue" eType="#//ggenericstructure/gprimitivetypes/UnlimitedNatural"/>
+      <eOperations name="setValue">
+        <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/UnlimitedNatural"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GStringValue" abstract="true" interface="true"
+        eSuperTypes="#//gecucdescription/GParameterValue">
+      <eOperations name="getValue" eType="#//ggenericstructure/gprimitivetypes/String"/>
+      <eOperations name="setValue">
+        <eParameters name="value" eType="#//ggenericstructure/gprimitivetypes/String"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GLinkerSymbolValue" abstract="true"
+        interface="true" eSuperTypes="#//gecucdescription/GStringValue"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GFunctionNameValue" abstract="true"
+        interface="true" eSuperTypes="#//gecucdescription/GLinkerSymbolValue"/>
+  </eSubpackages>
+</ecore:EPackage>

@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Export-Package: eu.cessar.ct.emfproxy,eu.cessar.ct.emfproxy.impl,eu.ce
+ ssar.ct.emfproxy.internal;x-internal:=true,eu.cessar.ct.emfproxy.util
+Require-Bundle: eu.cessar.ct.core.platform,
+ eu.cessar.ct.sdk,
+ eu.cessar.ct.runtime
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 4.0.2.0M1
+Bundle-Localization: plugin
+Bundle-Vendor: %plugin.provider
+Bundle-Name: %plugin.name
+Bundle-ManifestVersion: 2
+Bundle-Activator: eu.cessar.ct.emfproxy.internal.CessarPluginActivator
+Bundle-SymbolicName: eu.cessar.ct.emfproxy;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+
+
+

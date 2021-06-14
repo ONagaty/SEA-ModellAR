@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Bundle-Name: Testutils
+Bundle-Activator: eu.cessar.ct.testutils.CessarPluginActivator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: eu.cessar.ct.testutils;singleton:=true
+Bundle-ActivationPolicy: lazy
+Export-Package: eu.cessar.ct.test.annotations,
+ eu.cessar.ct.testutils,
+ eu.cessar.ct.testutils.log,
+ eu.cessar.ct.testutils.tests
+Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
+ org.eclipse.core.resources;visibility:=reexport,
+ org.junit;bundle-version="4.0.0";visibility:=reexport,
+ org.eclipse.sphinx.platform,
+ org.eclipse.test.performance,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.help.base,
+ eu.cessar.ct.core.mms,
+ org.eclipse.test;visibility:=reexport,
+ org.eclipse.ui.views.log,
+ org.eclipse.ui,
+ org.hamcrest.core;visibility:=reexport,
+ org.apache.ant,
+ eu.cessar.ct.runtime.ecuc,
+ org.eclipse.pde,
+ org.eclipse.pde.core
+Bundle-Version: 0.0.4.RC1
+Import-Package: eu.cessar.ct.core.platform.util
+Bundle-ClassPath: library.jar
+
+
+

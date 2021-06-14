@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ant.core.antTasks">
+      <antTask
+            class="eu.cessar.ct.ant.tasks.ConvertPath"
+            eclipseRuntime="true"
+            headless="true"
+            library="lib/common-ant.jar"
+            name="cessar.convertPath">
+      </antTask>
+      <antTask
+            class="eu.cessar.ct.ant.tasks.EclipseDependSet"
+            eclipseRuntime="true"
+            headless="true"
+            library="lib/common-ant.jar"
+            name="eclipse.dependset">
+      </antTask>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ant.core.antTypes">
+      <antType
+            class="eu.cessar.ct.ant.tasks.URISet"
+            eclipseRuntime="true"
+            headless="true"
+            library="lib/common-ant.jar"
+            name="uriset">
+      </antType>
+   </extension>
+   <extension
+         point="org.eclipse.ant.core.extraClasspathEntries">
+      <extraClasspathEntry
+            eclipseRuntime="true"
+            headless="true"
+            library="lib/common-ant.jar">
+      </extraClasspathEntry>
+   </extension>
+
+</plugin>

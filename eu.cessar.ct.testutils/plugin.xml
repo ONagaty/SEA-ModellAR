@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="eu.cessar.ct.runtime.cessarClasspathContributor">
+      <provider
+            class="eu.cessar.ct.testutils.TestUtilsClassPathProvider"
+            container="eu.cessar.ct.runtime.classpath.genericClasspathContainer"
+            id="eu.cessar.ct.testutils.testUtilsClassPathProvider">
+      </provider>
+   </extension>
+
+</plugin>

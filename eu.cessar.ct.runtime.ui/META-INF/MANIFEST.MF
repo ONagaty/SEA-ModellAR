@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %plugin.name
+Bundle-SymbolicName: eu.cessar.ct.runtime.ui;singleton:=true
+Bundle-Localization: plugin
+Bundle-Version: 4.0.3.2M2
+Bundle-Vendor: %plugin.provider
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: eu.cessar.ct.core.platform.ui,
+ eu.cessar.ct.runtime,
+ org.eclipse.jdt.ui,
+ org.eclipse.pde.core,
+ org.eclipse.debug.core,
+ org.eclipse.pde.ui,
+ org.eclipse.debug.ui,
+ org.eclipse.jdt.launching,
+ eu.cessar.ct.cid,
+ eu.cessar.ct.cid.ui,
+ eu.cessar.ct.core.mms
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: eu.cessar.ct.runtime.ui.internal.CessarPluginActivator
+Export-Package: eu.cessar.ct.runtime.ui.execution,
+ eu.cessar.ct.runtime.ui.internal;x-internal:=true,
+ eu.cessar.ct.runtime.ui.internal.classpath;x-internal:=true
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="pm"
+    nsURI="http://cessar.eu/PMBase" nsPrefix="pm">
+  <eClassifiers xsi:type="ecore:EClass" name="IPresentationModel" abstract="true"
+      interface="true" eSuperTypes="#//IPMElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IPMPackage" abstract="true" interface="true"
+      eSuperTypes="#//IPMNamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IPMElement" abstract="true" interface="true"
+      eSuperTypes="#//IEMFProxyObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IPMNamedElement" abstract="true" interface="true"
+      eSuperTypes="#//IPMElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IPMContainerParent" abstract="true"
+      interface="true" eSuperTypes="#//IPMNamedElement">
+    <eOperations name="isCompatibleWith" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject">
+      <eAnnotations source="EMF_PROXY">
+        <details key="TYPE" value="OP_isCompatibleWith"/>
+      </eAnnotations>
+      <eParameters name="qualifiedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IPMModuleConfiguration" abstract="true"
+      interface="true" eSuperTypes="#//IPMContainerParent">
+    <eOperations name="asCompatibleModuleConfiguration" eType="#//IPMModuleConfiguration">
+      <eAnnotations source="EMF_PROXY">
+        <details key="TYPE" value="OP_asCompatibleModuleConfiguration"/>
+      </eAnnotations>
+      <eParameters name="qualifiedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IPMContainer" abstract="true" interface="true"
+      eSuperTypes="#//IPMContainerParent">
+    <eOperations name="asCompatibleContainer" eType="#//IPMContainer">
+      <eAnnotations source="EMF_PROXY">
+        <details key="TYPE" value="OP_asCompatibleContainer"/>
+      </eAnnotations>
+      <eParameters name="qualifiedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IPMChoiceContainer" abstract="true"
+      interface="true" eSuperTypes="#//IPMContainer"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IPMInstanceRef" abstract="true" interface="true"
+      eSuperTypes="#//IPMElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MissingContainer" eSuperTypes="#//IPMContainer">
+    <eOperations name="getShortName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="// it should be a proxy&#xD;&#xA;org.eclipse.emf.common.util.URI uri = eProxyURI();&#xD;&#xA;if (uri != null)&#xD;&#xA;{&#xD;&#xA;&#x9;// return the last segment from the fragment&#xD;&#xA;&#x9;String path = uri.fragment();&#xD;&#xA;&#x9;if (path != null)&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;path = org.artop.aal.common.resource.AutosarURIFactory.getTrailingAbsoluteQualifiedNameSegment(path);&#xD;&#xA;&#x9;&#x9;if (path != null &amp;&amp; path.length() == 0)&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;path = null;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;return path;&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;&#x9;return null;&#xD;&#xA;}"/>
+        <details key="documentation" value="Return the shortname of the container from the proxy URI"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="isSetShortName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="return getShortName() != null;&#xD;&#xA;"/>
+        <details key="documentation" value="Check if a shortname exists inside the proxy URI"/>
+      </eAnnotations>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IEMFProxyObject" instanceClassName="eu.cessar.ct.sdk.pm.IEMFProxyObject"
+      abstract="true" interface="true"/>
+</ecore:EPackage>

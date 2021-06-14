@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Export-Package: eu.cessar.ct.sdk,
+ eu.cessar.ct.sdk.autofill,
+ eu.cessar.ct.sdk.autofill.algorithms,
+ eu.cessar.ct.sdk.collections,
+ eu.cessar.ct.sdk.logging,
+ eu.cessar.ct.sdk.pm,
+ eu.cessar.ct.sdk.pm.impl,
+ eu.cessar.ct.sdk.runtime,
+ eu.cessar.ct.sdk.sea,
+ eu.cessar.ct.sdk.sea.util,
+ eu.cessar.ct.sdk.utils
+Require-Bundle: eu.cessar.ct.core.platform,
+ org.artop.aal.gautosar,
+ eu.cessar.ct.sdk.core;visibility:=reexport
+Bundle-Vendor: %plugin.provider
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 4.0.2.0M1
+Bundle-Name: %plugin.name
+Bundle-Localization: plugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: eu.cessar.ct.sdk;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+
+

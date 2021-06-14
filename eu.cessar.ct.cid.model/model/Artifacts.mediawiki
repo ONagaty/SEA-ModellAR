@@ -1,0 +1,42 @@
+Possible types of artifacts that can appear in a cid file:
+
+= Generator =
+
+Create such an artifact for each jet file
+
+* Artifact name : '''generator'''
+* Parameters
+** file : String
+*** specify the relative location of the generator
+
+
+= Pluget =
+
+Create such an artifact for each pluget
+
+* Artifact name : '''pluget'''
+* Parameters
+** file : String
+*** specify the relative location of the pluget
+** haveParameters : boolean
+*** Just to mention if parameters are expected. If this is false, CT could choose not to show the parameter dialog
+** haveUi : boolean
+*** If false, the pluget does not have UI. Combined with ''haveParameters'' is an indication for CT that it could run the pluget also from a build 
+ 
+= build flow =
+
+Create such an artifact for each build flow that can exist. A build flow is a sequence of execution of plugets (no ui, no params) and jet files 
+
+* Artifact name : '''build'''
+* Parameters
+** file : String
+
+
+= Module definition =
+
+= Module configuration =
+
+= Modeling file =
+
+= Document =
+

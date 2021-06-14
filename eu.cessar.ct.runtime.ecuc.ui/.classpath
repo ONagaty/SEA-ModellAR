@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/eu.cessar.ct.core.platform"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/eu.cessar.ct.core.platform.ui.ant"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/eu.cessar.ct.cid"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/eu.cessar.ct.runtime.ecuc"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/eu.cessar.ct.cid.model"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/eu.cessar.ct.sdk"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/eu.cessar.ct.runtime"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

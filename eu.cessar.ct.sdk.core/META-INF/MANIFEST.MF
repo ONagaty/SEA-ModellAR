@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: eu.cessar.ct.sdk.core;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: %plugin.provider
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 4.0.2.0M1
+Bundle-Name: %plugin.name
+Bundle-Localization: plugin
+Export-Package: eu.cessar.ct.sdk.pm
+Require-Bundle: org.eclipse.emf.ecore

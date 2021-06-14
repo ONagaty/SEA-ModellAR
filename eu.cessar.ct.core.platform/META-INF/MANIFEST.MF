@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Require-Bundle: org.artop.aal.workspace;visibility:=reexport,
+ org.eclipse.core.variables,
+ eu.cessar.ct.core.security.license,
+ org.eclipse.core.resources,
+ org.eclipse.equinox.preferences
+Export-Package: eu.cessar.ct.core.internal.platform;x-friends:="eu.cessar.ct.core.platform.ui",
+ eu.cessar.ct.core.platform,
+ eu.cessar.ct.core.platform.concurrent,
+ eu.cessar.ct.core.platform.emf,
+ eu.cessar.ct.core.platform.internal.topicservices;x-internal:=true,
+ eu.cessar.ct.core.platform.io,
+ eu.cessar.ct.core.platform.nature,
+ eu.cessar.ct.core.platform.results,
+ eu.cessar.ct.core.platform.topicservices,
+ eu.cessar.ct.core.platform.util,
+ eu.cessar.ct.core.platform.xml,
+ eu.cessar.req
+Bundle-Vendor: %plugin.provider
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 4.0.3.3
+Bundle-Localization: plugin
+Bundle-Name: %plugin.name
+Bundle-ManifestVersion: 2
+Bundle-Activator: eu.cessar.ct.core.internal.platform.CessarPluginActivator
+Bundle-SymbolicName: eu.cessar.ct.core.platform;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+
+

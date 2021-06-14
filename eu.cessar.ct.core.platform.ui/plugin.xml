@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="eu.cessar.ct.core.internal.platform.ui.CessarPerspective"
+            icon="images/cessar-ct_logo.png"
+            id="eu.cessar.ct.platform.CessarPerspective"
+            name="CESSAR-CT">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="eu.cessar.ct.views"
+            name="CESSAR-CT">
+      </category>
+   </extension>
+</plugin>

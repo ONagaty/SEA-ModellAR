@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/eu.cessar.ct.workspace/src"
+    editDirectory="/eu.cessar.ct.workspace.edit/src" editorDirectory="/eu.cessar.ct.workspace.editor/src"
+    modelPluginID="eu.cessar.ct.workspace" modelName="ModelDocumentation" modelPluginClass=""
+    testsDirectory="/eu.cessar.ct.workspace.tests/src" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" providerRootExtendsClass="">
+  <foreignModel>ModelDocumentation.ecore</foreignModel>
+  <genPackages prefix="Modeldocumentation" basePackage="eu.cessar.ct.workspace.internal"
+      disposableProviderFactory="true" contentTypeIdentifier="" ecorePackage="ModelDocumentation.ecore#/">
+    <genClasses ecoreClass="ModelDocumentation.ecore#//DocElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ModelDocumentation.ecore#//DocElement/instanceOf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModelDocumentation.ecore#//DocElement/attributes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ModelDocumentation.ecore#//DocElement/contains"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModelDocumentation.ecore#//DocElement/shortName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModelDocumentation.ecore#//DocElement/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModelDocumentation.ecore#//DocElement/isInstance"/>
+    </genClasses>
+    <genClasses ecoreClass="ModelDocumentation.ecore#//DefElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModelDocumentation.ecore#//DefElement/multiplicity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModelDocumentation.ecore#//DefElement/shortName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModelDocumentation.ecore#//DefElement/description"/>
+    </genClasses>
+    <genClasses ecoreClass="ModelDocumentation.ecore#//Multiplicity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModelDocumentation.ecore#//Multiplicity/lower"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModelDocumentation.ecore#//Multiplicity/upper"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ModelDocumentation.ecore#//Multiplicity/multiplicity"/>
+    </genClasses>
+    <genClasses ecoreClass="ModelDocumentation.ecore#//Attribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ModelDocumentation.ecore#//Attribute/instanceOf"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModelDocumentation.ecore#//Attribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModelDocumentation.ecore#//Attribute/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModelDocumentation.ecore#//Attribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ModelDocumentation.ecore#//AttributeDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModelDocumentation.ecore#//AttributeDef/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ModelDocumentation.ecore#//AttributeDef/typeOfValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ModelDocumentation.ecore#//AttributeDef/multiplicity"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

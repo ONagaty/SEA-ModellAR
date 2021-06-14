@@ -1,0 +1,16 @@
+package {PACKAGE};
+
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.IProgressMonitor;
+
+import eu.cessar.ct.sdk.ICessarPluget;
+
+
+public class {CLASSNAME} implements ICessarPluget{
+
+	public void run(IProject project, IProgressMonitor monitor, String[] args) 
+	{
+		
+	}
+
+}

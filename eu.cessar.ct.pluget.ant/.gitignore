@@ -1,0 +1,8 @@
+/bin/
+/META-INF/
+/build.properties
+/deploy_cessar-ant.xml
+/lib/
+/plugin.properties
+/plugin.xml
+/src/

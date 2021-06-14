@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-Vendor: %plugin.provider
+Bundle-Name: %plugin.name
+Bundle-SymbolicName: eu.cessar.ct.ant;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
+ org.apache.ant;visibility:=reexport,
+ org.eclipse.core.resources;visibility:=reexport,
+ org.eclipse.core.filesystem;visibility:=reexport,
+ eu.cessar.ct.core.platform
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: eu.cessar.ct.ant.tasks,
+ eu.cessar.ct.ant.tasks.util

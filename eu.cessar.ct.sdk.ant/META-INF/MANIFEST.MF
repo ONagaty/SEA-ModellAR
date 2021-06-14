@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-Vendor: %plugin.provider
+Bundle-Name: %plugin.name
+Bundle-SymbolicName: eu.cessar.ct.sdk.ant;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Require-Bundle: eu.cessar.ct.sdk;visibility:=reexport,
+ eu.cessar.ct.ant;visibility:=reexport,
+ eu.cessar.ct.core.mms,
+ org.eclipse.sphinx.emf.validation;visibility:=reexport,
+ eu.cessar.ct.core.platform
+Import-Package: eu.cessar.ct.ant.tasks
+Export-Package: eu.cessar.ct.sdk.ant

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/eu.cessar.ct.cid.model/src_model" editDirectory="/eu.cessar.ct.cid.model/src_edit"
+    editorDirectory="/eu.cessar.ct.cid.ui/src" modelPluginID="eu.cessar.ct.cid.model"
+    redirection="" modelName="Cid" modelPluginClass="" editPluginClass="eu.cessar.ct.cid.model.internal.CessarPluginActivator"
+    editorPluginClass="eu.cessar.ct.cid.ui.internal.CidEditorPlugin" updateClasspath="false"
+    rootExtendsClass="eu.cessar.ct.cid.model.CIDEObject" rootImplementsInterface=""
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" providerRootExtendsClass="" editPluginID="eu.cessar.ct.cid.model"
+    editorPluginID="eu.cessar.ct.cid.ui" runtimeVersion="2.8" language="" interfaceNamePattern=""
+    classNamePattern="" importOrganizing="true">
+  <foreignModel>cid.ecore</foreignModel>
+  <genPackages prefix="Model" basePackage="eu.cessar.ct.cid" resource="XML" disposableProviderFactory="true"
+      multipleEditorPages="false" fileExtensions="cid" ecorePackage="cid.ecore#/">
+    <genClasses ecoreClass="cid.ecore#//Cid">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cid.ecore#//Cid/deliveries"/>
+      <genOperations ecoreOperation="cid.ecore#//Cid/getArtifacts"/>
+      <genOperations ecoreOperation="cid.ecore#//Cid/getArtifacts.1">
+        <genParameters ecoreParameter="cid.ecore#//Cid/getArtifacts.1/type"/>
+      </genOperations>
+      <genOperations ecoreOperation="cid.ecore#//Cid/getArtifacts.2">
+        <genParameters ecoreParameter="cid.ecore#//Cid/getArtifacts.2/type"/>
+        <genParameters ecoreParameter="cid.ecore#//Cid/getArtifacts.2/name"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="cid.ecore#//Delivery">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cid.ecore#//Delivery/artifacts"/>
+      <genOperations ecoreOperation="cid.ecore#//Delivery/getArtifacts">
+        <genParameters ecoreParameter="cid.ecore#//Delivery/getArtifacts/type"/>
+      </genOperations>
+      <genOperations ecoreOperation="cid.ecore#//Delivery/getArtifacts.1">
+        <genParameters ecoreParameter="cid.ecore#//Delivery/getArtifacts.1/type"/>
+        <genParameters ecoreParameter="cid.ecore#//Delivery/getArtifacts.1/name"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="cid.ecore#//Metadata"/>
+    <genClasses ecoreClass="cid.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cid.ecore#//Property/value"/>
+    </genClasses>
+    <genClasses ecoreClass="cid.ecore#//Dependency">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cid.ecore#//Dependency/mandatory"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cid.ecore#//Dependency/version"/>
+      <genOperations ecoreOperation="cid.ecore#//Dependency/getConcreteBinding"/>
+    </genClasses>
+    <genClasses ecoreClass="cid.ecore#//Artifact">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cid.ecore#//Artifact/title"/>
+      <genOperations ecoreOperation="cid.ecore#//Artifact/getConcreteBinding"/>
+    </genClasses>
+    <nestedGenPackages prefix="Versioning" basePackage="eu.cessar.ct.cid.model" disposableProviderFactory="true"
+        multipleEditorPages="false" generateModelWizard="false" fileExtensions=""
+        ecorePackage="cid.ecore#//versioning">
+      <genClasses ecoreClass="cid.ecore#//versioning/VersionRange">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cid.ecore#//versioning/VersionRange/from"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cid.ecore#//versioning/VersionRange/to"/>
+      </genClasses>
+      <genClasses ecoreClass="cid.ecore#//versioning/Limit">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cid.ecore#//versioning/Limit/including"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cid.ecore#//versioning/Limit/value"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Datatypes" basePackage="eu.cessar.ct.cid.model" disposableProviderFactory="true"
+        multipleEditorPages="false" generateModelWizard="false" fileExtensions=""
+        ecorePackage="cid.ecore#//datatypes">
+      <genDataTypes ecoreDataType="cid.ecore#//datatypes/VersionLiteral"/>
+      <genDataTypes ecoreDataType="cid.ecore#//datatypes/Identifier"/>
+      <genDataTypes ecoreDataType="cid.ecore#//datatypes/IStatus"/>
+      <genDataTypes ecoreDataType="cid.ecore#//datatypes/ArtifactList"/>
+      <genDataTypes ecoreDataType="cid.ecore#//datatypes/PropertyList"/>
+      <genDataTypes ecoreDataType="cid.ecore#//datatypes/DependencyList"/>
+      <genDataTypes ecoreDataType="cid.ecore#//datatypes/IArtifactBinding"/>
+      <genDataTypes ecoreDataType="cid.ecore#//datatypes/IDependencyBinding"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Elements" basePackage="eu.cessar.ct.cid.model" disposableProviderFactory="true"
+        multipleEditorPages="false" generateModelWizard="false" contentTypeIdentifier=""
+        fileExtensions="" ecorePackage="cid.ecore#//elements">
+      <genClasses image="false" ecoreClass="cid.ecore#//elements/NamedElement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cid.ecore#//elements/NamedElement/name"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="cid.ecore#//elements/TypedElement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cid.ecore#//elements/TypedElement/type"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="cid.ecore#//elements/DependantElement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cid.ecore#//elements/DependantElement/metadata"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cid.ecore#//elements/DependantElement/dependencies"/>
+        <genOperations ecoreOperation="cid.ecore#//elements/DependantElement/evaluateDependencies"/>
+        <genOperations ecoreOperation="cid.ecore#//elements/DependantElement/getDependencies">
+          <genParameters ecoreParameter="cid.ecore#//elements/DependantElement/getDependencies/type"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="cid.ecore#//elements/PropertiesElement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cid.ecore#//elements/PropertiesElement/properties"/>
+        <genOperations ecoreOperation="cid.ecore#//elements/PropertiesElement/getProperties">
+          <genParameters ecoreParameter="cid.ecore#//elements/PropertiesElement/getProperties/name"/>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

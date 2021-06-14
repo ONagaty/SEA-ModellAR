@@ -1,0 +1,452 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="eu.cessar.ct.edit.ui" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="eu.cessar.ct.edit.ui" id="eu.cessar.ct.edit.ui.editors" name="Editors"/>
+      </appinfo>
+      <documentation>
+         Extension point used to define customization for Dynamic Properties Sections
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <choice minOccurs="1" maxOccurs="unbounded">
+            <element ref="classifierDefinition"/>
+            <element ref="featureDefinition"/>
+            <element ref="classDefinition"/>
+            <element ref="relationDefinition"/>
+         </choice>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="classifierDefinition">
+      <annotation>
+         <documentation>
+            Provide the posibility to define editor for a specific EClassifier
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The ID of the definition, should be unique
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The class that implements the editor.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":eu.cessar.ct.edit.ui.facility.IModelFragmentFeatureEditor"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="featureType" use="default" value="Primitive">
+            <annotation>
+               <documentation>
+                  The type of the EClassifier that this feature type apply to.
+               </documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <enumeration value="PRIMITIVE">
+                  </enumeration>
+                  <enumeration value="ENUM">
+                  </enumeration>
+                  <enumeration value="REFERENCE">
+                  </enumeration>
+               </restriction>
+            </simpleType>
+         </attribute>
+         <attribute name="classifierClass" type="string">
+            <annotation>
+               <documentation>
+                  The name of the primitive class name that the editor is about. If missing or equal with &quot;*&quot; it will match everyting
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="classifierType" type="string">
+            <annotation>
+               <documentation>
+                  The type name as specified by the model. If missing or equal with &quot;*&quot; it will match everyting
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="category" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="priority" type="string" use="default" value="50">
+            <annotation>
+               <documentation>
+                  The priority of the definition. If there are two classifier definition that match the one with the higher priority will be taken into account.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="default" type="boolean" use="required">
+            <annotation>
+               <documentation>
+                  Exactly one default classifier definition should be declared per featureType
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="featureDefinition">
+      <annotation>
+         <documentation>
+            Provide the posibility to define editor for a specific EStructuralFeature
+         </documentation>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="selector"/>
+         </sequence>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The ID of the definition, should be unique
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="class" type="string">
+            <annotation>
+               <documentation>
+                  The class that implements the feature editor
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":eu.cessar.ct.edit.ui.facility.IModelFragmentFeatureEditor"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="category" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The category of
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="priority" type="string" use="default" value="50">
+            <annotation>
+               <documentation>
+                  Set the priority of the section, this should be an integer value between 0 and 100. The sections with a higher value will stay upper in the properties view.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="cacheableType" use="required">
+            <annotation>
+               <documentation>
+                  Is a flag that marks if the editors will be cached.
+               </documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <enumeration value="NONE">
+                  </enumeration>
+                  <enumeration value="SIMPLE">
+                  </enumeration>
+               </restriction>
+            </simpleType>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="classDefinition">
+      <complexType>
+         <sequence>
+            <element ref="eClass"/>
+         </sequence>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The ID of the definition, should be unique
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="class" type="string">
+            <annotation>
+               <documentation>
+                  The class that implements the editor
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":eu.cessar.ct.edit.ui.facility.IModelFragmentEditorDelegate"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="cacheableType" use="required">
+            <annotation>
+               <documentation>
+                  Is a flag that marks if the editors will be cached.
+               </documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <enumeration value="NONE">
+                  </enumeration>
+                  <enumeration value="SIMPLE">
+                  </enumeration>
+               </restriction>
+            </simpleType>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="selector">
+      <annotation>
+         <documentation>
+            Used by a featureDefinition to specify what kind of EClass / EStructuralFeature definition should be matched by that feature definition
+         </documentation>
+      </annotation>
+      <complexType>
+         <choice>
+            <element ref="and"/>
+            <element ref="or"/>
+         </choice>
+      </complexType>
+   </element>
+
+   <element name="and">
+      <annotation>
+         <documentation>
+            Provides logical and support for the selections that exists right bellow it.
+         </documentation>
+      </annotation>
+      <complexType>
+         <choice minOccurs="1" maxOccurs="unbounded">
+            <element ref="and"/>
+            <element ref="or"/>
+            <element ref="not"/>
+            <element ref="eClass"/>
+            <element ref="eFeature"/>
+            <element ref="selectorProvider"/>
+         </choice>
+      </complexType>
+   </element>
+
+   <element name="or">
+      <annotation>
+         <documentation>
+            Provides logical or support for the selections that exists right bellow it.
+         </documentation>
+      </annotation>
+      <complexType>
+         <choice minOccurs="1" maxOccurs="unbounded">
+            <element ref="and"/>
+            <element ref="or"/>
+            <element ref="not"/>
+            <element ref="eClass"/>
+            <element ref="eFeature"/>
+            <element ref="selectorProvider"/>
+         </choice>
+      </complexType>
+   </element>
+
+   <element name="not">
+      <annotation>
+         <documentation>
+            Provides logical not support for the selector that exists right bellow it.
+         </documentation>
+      </annotation>
+      <complexType>
+         <choice>
+            <element ref="and"/>
+            <element ref="or"/>
+            <element ref="eClass"/>
+            <element ref="eFeature"/>
+            <element ref="selectorProvider"/>
+         </choice>
+      </complexType>
+   </element>
+
+   <element name="eClass">
+      <annotation>
+         <documentation>
+            A selector based on the EClass of the object
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="regexp" type="string">
+            <annotation>
+               <documentation>
+                  A regular expression that should be matched against the fully qualified name of the EClass.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="eFeature">
+      <annotation>
+         <documentation>
+            A selector based on the EFeature of the object
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="regexp" type="string">
+            <annotation>
+               <documentation>
+                  A regular expression that should be matched against the name of the EFeature.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="selectorProvider">
+      <annotation>
+         <documentation>
+            A selector that have a custom implementation
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="value" type="string" use="required">
+            <annotation>
+               <documentation>
+                  A class that encapsulate the selection logic.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":eu.cessar.ct.ui.properties.ISelector"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="relationDefinition">
+      <complexType>
+         <sequence minOccurs="0" maxOccurs="unbounded">
+            <element ref="properties"/>
+            <element ref="masterEditor"/>
+         </sequence>
+         <attribute name="provider" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Provides ...
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":eu.cessar.ct.edit.ui.editor.expansion.IModelFragmentEditorExpansionProvider"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="properties">
+      <complexType>
+         <attribute name="key" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="value" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="masterEditor">
+      <annotation>
+         <documentation>
+            The master editor, for the case of hierachical editors, that have expansions.
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="masterEditorID" type="string" use="required">
+            <annotation>
+               <documentation>
+                  the id of the master editor
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         CESSAR-AR 0.1
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiinfo"/>
+      </appinfo>
+      <documentation>
+         The public API is under eu.cessar.ct.ui.properties
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="copyright"/>
+      </appinfo>
+      <documentation>
+         Copyright 2009 Continental Engineering
+      </documentation>
+   </annotation>
+
+</schema>

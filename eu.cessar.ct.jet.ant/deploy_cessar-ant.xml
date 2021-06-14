@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="jar-ant" default="all" basedir=".">
+
+	<property name="project.name" value="eu.cessar.ct.jet.ant" />
+	<!--
+	<property name="test.project.name" value="eu.cessar.ct.runtime.tests" />
+	-->
+	<property name="test2.project.name" value="eu.cessar.ct.compat.tests" />
+	<property name="library.name" value="jet-ant.jar" />
+
+	<property name="temp.folder" value="${basedir}"/>
+	<property name="build.result.folder" value="${basedir}"/>
+
+
+	<target name="init">
+		<eclipse.convertPath property="project.folder" resourcepath="${project.name}"/>
+		<uptodate property="library.uptodate">
+			<srcfiles dir="${project.folder}/src" includes="**/*.java" />
+			<mapper type="merge" to="${project.folder}/lib/${library.name}"/>
+		</uptodate>
+
+		<!--
+		<eclipse.convertPath property="test.project.folder" resourcepath="${test.project.name}"/>
+		<uptodate property="test.library.uptodate">
+			<srcfiles dir="${project.folder}/src" includes="**/*.java" />
+			<mapper type="merge" to="${test.project.folder}/lib/${library.name}"/>
+		</uptodate>
+		-->
+
+		<eclipse.convertPath property="test2.project.folder" resourcepath="${test2.project.name}"/>
+		<uptodate property="test2.library.uptodate">
+			<srcfiles dir="${project.folder}/src" includes="**/*.java" />
+			<mapper type="merge" to="${test2.project.folder}/lib/${library.name}"/>
+		</uptodate>
+	</target>
+
+	<!--
+	<target name="testCopy" unless="test.library.uptodate">
+		<mkdir dir="${test.project.folder}/lib" />
+		<attrib file="${test.project.folder}/lib/${library.name}" readonly="false"/>
+		<copy file="${build.result.folder}/lib/${library.name}"
+			tofile="${test.project.folder}/lib/${library.name}" />
+	</target>
+	-->
+
+	<target name="test2Copy" unless="test2.library.uptodate">
+		<mkdir dir="${test2.project.folder}/lib" />
+		<attrib file="${test2.project.folder}/lib/${library.name}" readonly="false"/>
+		<copy file="${build.result.folder}/lib/${library.name}"
+			tofile="${test2.project.folder}/lib/${library.name}" />
+	</target>
+
+	<target name="jar" unless="library.uptodate" depends="init"  description="Create jar: lib/jet-ant.jar">
+		<mkdir dir="${build.result.folder}/lib"/>
+		<attrib file="${build.result.folder}/lib/${library.name}" readonly="false"/>
+		<jar destfile="${build.result.folder}/lib/${library.name}" >
+			<fileset dir ="${temp.folder}/bin">
+				<exclude name="**/project.pj"/>
+			</fileset>
+		</jar>
+	</target>
+
+	<target name="refresh" depends="init" if="eclipse.running" description="Refresh this folder.">
+		<eclipse.refreshLocal resource="/${project.name}/lib" depth="infinite"/>
+		<eclipse.refreshLocal resource="/${test.project.name}/lib" depth="infinite"/>
+	</target>
+
+	<!-- ,testCopy, -->
+	<target name="all" depends="jar,test2Copy,refresh" if="eclipse.running" description="Jar and refresh this folder."/>
+
+</project>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="http://www.cessar.eu/cid" nsPrefix="">
+  <eClassifiers xsi:type="ecore:EClass" name="Cid">
+    <eOperations name="getArtifacts" eType="#//datatypes/ArtifactList">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Return all Artifacts defined under current Cid &#xD;&#xA;@return list of Artifacts defined under current Cid "/>
+        <details key="body" value="return &lt;%eu.cessar.ct.cid.model.internal.util.CidServices%>.getArtifacts(this);&#xD;&#xA;"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getArtifacts" eType="#//datatypes/ArtifactList">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Return all Artifacts of the specified &lt;code>type&lt;/code> defined under current Cid &#xD;&#xA;@param type Artifact type&#xD;&#xA;@return list of Artifacts having specified &lt;code>type&lt;/code>"/>
+        <details key="body" value="return &lt;%eu.cessar.ct.cid.model.internal.util.CidServices%>.getArtifacts(this, type);&#xD;&#xA;"/>
+      </eAnnotations>
+      <eParameters name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getArtifacts" eType="#//datatypes/ArtifactList">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Return all Artifacts of the specified &lt;code>type&lt;/code> and &lt;code>name&lt;/code> defined under current Cid &#xD;&#xA;@param type Artifact type&#xD;&#xA;@param name Artifact name&#xD;&#xA;@return list of Artifacts having specified &lt;code>type&lt;/code>"/>
+        <details key="body" value="return &lt;%eu.cessar.ct.cid.model.internal.util.CidServices%>.getArtifacts(this, type, name);&#xD;&#xA;"/>
+      </eAnnotations>
+      <eParameters name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deliveries" upperBound="-1"
+        eType="#//Delivery" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="delivery"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Delivery" eSuperTypes="#//elements/DependantElement #//elements/NamedElement #//elements/PropertiesElement">
+    <eOperations name="getArtifacts" eType="#//datatypes/ArtifactList">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Return all Artifacts of the specified &lt;code>type&lt;/code> defined under current Delivery&#xD;&#xA;@param type Artifact type&#xD;&#xA;@return list of Artifacts having specified &lt;code>type&lt;/code>"/>
+        <details key="body" value="return &lt;%eu.cessar.ct.cid.model.internal.util.DeliveryServices%>.getArtifacts(this, type);&#xD;&#xA;"/>
+      </eAnnotations>
+      <eParameters name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getArtifacts" eType="#//datatypes/ArtifactList">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Return all Artifacts of the specified &lt;code>type&lt;/code> and &lt;code>name&lt;/code> defined under current Delivery&#xD;&#xA;@param type Artifact type&#xD;&#xA;@param name Artifact name&#xD;&#xA;@return list of Artifacts having specified &lt;code>type&lt;/code>"/>
+        <details key="body" value="return &lt;%eu.cessar.ct.cid.model.internal.util.DeliveryServices%>.getArtifacts(this, type, name);&#xD;&#xA;"/>
+      </eAnnotations>
+      <eParameters name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="artifacts" upperBound="-1"
+        eType="#//Artifact" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="artifact"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Metadata" eSuperTypes="#//elements/PropertiesElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Property" eSuperTypes="#//elements/NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dependency" eSuperTypes="#//elements/TypedElement #//elements/PropertiesElement">
+    <eOperations name="getConcreteBinding" eType="#//datatypes/IDependencyBinding">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Return the concrete binding associated with this dependency. If there is no such binding, null will be returned.&#xD;&#xA;&#xD;&#xA;@return the concrete binding or null if there is no binding available"/>
+        <details key="body" value="&lt;%eu.cessar.ct.cid.model.IDependencyBinding%> binding = (&lt;%eu.cessar.ct.cid.model.IDependencyBinding%>) getField(BINDING_FLAG);&#xD;&#xA;if (binding == null)&#xD;&#xA;{&#xD;&#xA;&#x9;binding = &lt;%eu.cessar.ct.cid.model.internal.util.DependencyServices%>.getConcreteBinding(this);&#xD;&#xA;&#x9;setField(BINDING_FLAG, binding);&#xD;&#xA;}&#xD;&#xA;return binding;&#xD;&#xA;"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mandatory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="version" eType="#//versioning/VersionRange"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Artifact" eSuperTypes="#//elements/DependantElement #//elements/TypedElement #//elements/NamedElement #//elements/PropertiesElement">
+    <eOperations name="getConcreteBinding" eType="#//datatypes/IArtifactBinding">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Return the concrete binding associated with this artifact. If there is no such binding, null will be returned.&#xD;&#xA;&#xD;&#xA;@return the concrete binding or null if there is no binding available"/>
+        <details key="body" value="&lt;%eu.cessar.ct.cid.model.IArtifactBinding%> binding = (&lt;%eu.cessar.ct.cid.model.IArtifactBinding%>) getField(BINDING_FLAG);&#xD;&#xA;if (binding == null)&#xD;&#xA;{&#xD;&#xA;&#x9;binding = &lt;%eu.cessar.ct.cid.model.internal.util.ArtifactServices%>.getConcreteBinding(this);&#xD;&#xA;&#x9;setField(BINDING_FLAG, binding);&#xD;&#xA;}&#xD;&#xA;return binding;&#xD;&#xA;"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eSubpackages name="versioning" nsURI="http://www.cessar.eu/cid/versioning" nsPrefix="">
+    <eClassifiers xsi:type="ecore:EClass" name="VersionRange">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//versioning/Limit"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//versioning/Limit"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Limit">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="including" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//datatypes/VersionLiteral"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="datatypes" nsURI="http://www.cessar.eu/cid/datatypes" nsPrefix="">
+    <eClassifiers xsi:type="ecore:EDataType" name="VersionLiteral" instanceClassName="java.lang.String"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="Identifier" instanceClassName="java.lang.String"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="IStatus" instanceClassName="org.eclipse.core.runtime.IStatus"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="ArtifactList" instanceTypeName="java.util.List&lt;eu.cessar.ct.cid.model.Artifact>"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="PropertyList" instanceTypeName="java.util.List&lt;eu.cessar.ct.cid.model.Property>"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="DependencyList" instanceTypeName="java.util.List&lt;eu.cessar.ct.cid.model.Dependency>"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="IArtifactBinding" instanceClassName="eu.cessar.ct.cid.model.IArtifactBinding"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="IDependencyBinding" instanceClassName="eu.cessar.ct.cid.model.IDependencyBinding"/>
+  </eSubpackages>
+  <eSubpackages name="elements" nsURI="http://www.cessar.eu/cid/elements" nsPrefix="">
+    <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//datatypes/Identifier"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TypedElement" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//datatypes/Identifier"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DependantElement" abstract="true">
+      <eOperations name="evaluateDependencies" eType="#//datatypes/IStatus">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Evaluate all dependencies defined by the artifact plus those inherited from Delivery and not overrided.&#xD;&#xA;&#xD;&#xA;@return the evaluation status."/>
+          <details key="body" value="return &lt;%eu.cessar.ct.cid.model.internal.util.DependantElementServices%>.evaluateDependencies(this);&#xD;&#xA;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="getDependencies" eType="#//datatypes/DependencyList">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Return all Dependencies of the specified &lt;code>type&lt;/code> defined under current Artifact &#xD;&#xA;@param type dependency type&#xD;&#xA;@return list of Dependencies having specified dependency type"/>
+          <details key="body" value="return &lt;%eu.cessar.ct.cid.model.internal.util.DependantElementServices%>.getDependencies(this, type);&#xD;&#xA;"/>
+        </eAnnotations>
+        <eParameters name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" eType="#//Metadata"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
+          eType="#//Dependency" containment="true">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="dependency"/>
+          <details key="namespace" value="http://www.cessar.eu/cid"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PropertiesElement" abstract="true">
+      <eOperations name="getProperties" eType="#//datatypes/PropertyList">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Return all Properties with the specified &lt;code>name&lt;/code> defined under current Artifact &#xD;&#xA;@param name Property name&#xD;&#xA;@return list of Properties having specified name"/>
+          <details key="body" value="return eu.cessar.ct.cid.model.internal.util.PropertiesElementServices.getProperties(this, name);&#xD;&#xA;"/>
+        </eAnnotations>
+        <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+          eType="#//Property" containment="true">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+          <details key="name" value="property"/>
+          <details key="namespace" value="http://www.cessar.eu/cid"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

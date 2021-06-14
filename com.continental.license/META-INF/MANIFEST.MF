@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-Name: CESSAR-CT License
+Bundle-Activator: com.continental.license.internal.CessarPluginActivator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: Continental Engineering Services GmbH
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.continental.license
+Bundle-ActivationPolicy: lazy
+Export-Package: com.continental.license.internal;x-internal:=true,
+ com.continental.license.internal.core;
+  x-friends:="com.continental.license.ui,
+   eu.cessar.ct.core.security.license,
+   eu.cessar.ct.core.security.licenseui,
+   eu.cessar.ct.core.license.tests"
+Bundle-Version: 2.1.1.6
+Require-Bundle: org.eclipse.core.runtime
+

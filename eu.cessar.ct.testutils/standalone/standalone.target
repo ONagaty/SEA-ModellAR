@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="standalone" sequenceNumber="2">
+<locations>
+<location path="${CESSAR_TARGET}\CESSAR-CT" type="Profile"/>
+<location path="${CESSAR_TARGET}\runnables\eclipse-test-framework-3.8.2" type="Profile"/>
+<location path="${CESSAR_TARGET}\runnables\swtbot-2.1.0" type="Profile"/>
+</locations>
+</target>

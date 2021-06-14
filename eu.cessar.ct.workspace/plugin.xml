@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="eu.cessar.ct.consistency.check" name="Consistency check" schema="schema/consistency_check.exsd"/>
+   <extension
+         point="eu.cessar.ct.core.platform.sdkService">
+      <service
+            provider="eu.cessar.ct.workspace.internal.logger.LoggerServiceProvider"
+            serviceID="eu.cessar.ct.sdk.logging.LoggerFactory$Service">
+      </service>
+   </extension>
+   <extension
+         point="org.eclipse.sphinx.emf.workspace.editingDomains">
+      <factory
+            class="eu.cessar.ct.workspace.internal.domain.CessarWorkspaceEditingDomainFactory">
+         <requiredFor
+               metaModelDescriptorIdPattern="org.artop.aal.autosar\d\w"/>
+      </factory>
+   </extension>
+   <extension
+         point="eu.cessar.ct.consistency.check">
+      <consistencyCheck
+            checkerClass="eu.cessar.ct.workspace.internal.consistencycheck.impl.CheckForWrongMetamodel"
+            id="eu.cessar.ct.consistencycheck.wrongmodel"
+            name="Check for files of wrong meta-model">
+      </consistencyCheck>
+      <consistencyCheck
+            checkerClass="eu.cessar.ct.workspace.internal.consistencycheck.impl.CheckForJetVerification"
+            id="eu.cessar.ct.consistencycheck.jetVerification"
+            name="Check for JetVerification">
+      </consistencyCheck>
+      <consistencyCheck
+            checkerClass="eu.cessar.ct.workspace.internal.consistencycheck.impl.CheckForProjectVerification"
+            id="eu.cessar.ct.consistencycheck.projectVerification"
+            name="Check for ProjectVerification">
+      </consistencyCheck>
+      <consistencyCheck
+            checkerClass="eu.cessar.ct.workspace.internal.consistencycheck.impl.CheckForClasspathVerification"
+            id="eu.cessar.ct.consistencycheck.classpathVerification"
+            name="Check for ClasspathVerification">
+      </consistencyCheck>
+      <consistencyCheck
+            checkerClass="eu.cessar.ct.workspace.internal.consistencycheck.impl.CheckForSettingsVerification"
+            id="eu.cessar.ct.consistencycheck.settingsVerification"
+            name="Check for SettingsVerification">
+      </consistencyCheck>
+      <consistencyCheck
+            checkerClass="eu.cessar.ct.workspace.internal.consistencycheck.impl.CheckForPmbinFolderVerification"
+            id="eu.cessar.ct.consistencycheck.pmbinFolderVerification"
+            name="Check for PmbinFolderVerification">
+      </consistencyCheck>
+   </extension>
+
+</plugin>

@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="eu.cessar.ct.edit.ui" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="eu.cessar.ct.edit.ui" id="editorComposition" name="editorComposition"/>
+      </appinfo>
+      <documentation>
+         [Enter description of this extension point.]
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <choice minOccurs="1" maxOccurs="unbounded">
+            <element ref="compositionDefinition"/>
+         </choice>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="compositionDefinition">
+      <annotation>
+         <documentation>
+            Gives the possibility to implement a provider for a group of editors
+         </documentation>
+      </annotation>
+      <complexType>
+         <attribute name="provider" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Specialized provider for compositions of editors.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":eu.cessar.ct.edit.ui.IEditorCompositionProvider"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="input" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The name of the EClass for which the provider is specialized in.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="type" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Composition type (SIMPLE, ECUC, SYSTEM)
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         [Enter the first release in which this extension point appears.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiinfo"/>
+      </appinfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+
+</schema>

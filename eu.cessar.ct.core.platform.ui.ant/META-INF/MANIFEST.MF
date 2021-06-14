@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Vendor: %plugin.provider
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 4.0.2.0M1
+Bundle-Name: %plugin.name
+Bundle-Localization: plugin
+Bundle-SymbolicName: eu.cessar.ct.core.platform.ui.ant;singleton:=true
+Bundle-Activator: eu.cessar.ct.core.internal.platform.ui.ant.CessarPluginActivator
+Require-Bundle: org.eclipse.debug.ui,
+ org.eclipse.core.variables,
+ org.eclipse.jdt.launching,
+ org.apache.ant,
+ org.eclipse.ant.launching,
+ org.eclipse.core.externaltools,
+ com.continental.ibs.swemt.stephandler,
+ org.eclipse.ltk.core.refactoring,
+ org.eclipse.ant.core,
+ eu.cessar.ct.core.platform.ui,
+ org.eclipse.jdt.core,
+ org.eclipse.ant.ui,
+ org.eclipse.ui.externaltools
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: eu.cessar.ct.core.internal.platform.ui.ant;x-internal:=true,
+ eu.cessar.ct.core.internal.platform.ui.ant.refactoring;x-internal:=true,
+ eu.cessar.ct.core.platform.ui.ant
+

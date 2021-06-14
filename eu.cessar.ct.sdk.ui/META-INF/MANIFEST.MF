@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Require-Bundle: eu.cessar.ct.core.platform,
+ eu.cessar.ct.sdk,
+ org.eclipse.jface;visibility:=reexport
+Bundle-Vendor: %plugin.provider
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 4.0.3.4M2
+Bundle-Localization: plugin
+Bundle-Name: %plugin.name
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: eu.cessar.ct.sdk.ui;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: eu.cessar.ct.sdk.ui

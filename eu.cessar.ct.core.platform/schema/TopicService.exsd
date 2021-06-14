@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="eu.cessar.ct.core.platform" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="eu.cessar.ct.core.platform" id="eu.cessar.ct.core.platform.TopicService" name="TopicService"/>
+      </appinfo>
+      <documentation>
+         Enables the contribution of AUTOSAR release specific implementations
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <choice minOccurs="0" maxOccurs="unbounded">
+            <element ref="serviceMapping"/>
+            <element ref="topic"/>
+         </choice>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="identifier"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="descriptor">
+      <complexType>
+         <attribute name="ID" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The ID of the MM descriptor.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="identifier"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="parentDescriptor" type="string">
+            <annotation>
+               <documentation>
+                  The ID of the parent descriptor
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="identifier" basedOn="eu.cessar.ct.core.platform.TopicService/topic/descriptor/@ID"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="serviceMapping">
+      <complexType>
+         <attribute name="topicID" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="identifier" basedOn="eu.cessar.ct.core.platform.TopicService/topic/@ID"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="descriptorID" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="identifier" basedOn="eu.cessar.ct.core.platform.TopicService/topic/descriptor/@ID"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="serviceID" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The class that implements the MM service, should be an instanceof ITopicService
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="identifier" basedOn="eu.cessar.ct.core.platform.TopicService/topic/service/@ID"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="provider" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The fully qualified name of the class implementing the ITopicServiceProvider interface.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":eu.cessar.ct.core.platform.topicservices.ITopicServiceProvider"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="topic">
+      <complexType>
+         <choice minOccurs="1" maxOccurs="unbounded">
+            <element ref="service"/>
+            <element ref="descriptor"/>
+         </choice>
+         <attribute name="ID" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The ID of the topic
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="service">
+      <complexType>
+         <attribute name="ID" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The name of the interface that a service mapping can provide an implementation for.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":eu.cessar.ct.core.platform.topicservices.ITopicService"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         [Enter the first release in which this extension point appears.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiinfo"/>
+      </appinfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+
+</schema>

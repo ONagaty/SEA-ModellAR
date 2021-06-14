@@ -1,0 +1,46 @@
+package {PACKAGE};
+
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.IProgressMonitor;
+
+import eu.cessar.ct.sdk.ICessarPluget;
+import eu.cessar.ct.sdk.logging.LoggerFactory;
+import eu.cessar.ct.sdk.runtime.CessarSaveException;
+import eu.cessar.ct.sdk.runtime.ExecutionService;
+import eu.cessar.ct.sdk.utils.ModelUtils;
+
+public class {CLASSNAME} implements ICessarPluget
+{
+	public void run(final IProject project, IProgressMonitor monitor, String[] args)
+	{
+		LoggerFactory.getLogger().info("Pluget started.");
+
+		try
+		{
+			ExecutionService.getRunningManager(project).updateModel(new Runnable()
+			{
+				public void run()
+				{
+					// code that changes model
+				}
+			});
+		}
+		catch (Exception e)
+		{
+			LoggerFactory.getLogger().log(e);
+		}
+		finally
+		{
+			try
+			{
+				// save modified resources
+				ModelUtils.saveResources(ModelUtils.getDirtyResources(project), monitor);
+			}
+			catch (CessarSaveException e)
+			{
+				LoggerFactory.getLogger().log(e);
+			}
+		}
+		LoggerFactory.getLogger().info("Pluget ended.");
+	}
+}

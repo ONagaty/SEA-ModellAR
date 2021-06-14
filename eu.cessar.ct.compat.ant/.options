@@ -1,0 +1,4 @@
+
+# options for debugging the plugin
+# for a plugin named plugin.template, the options could look like:
+# plugin.template/foo/bar=value

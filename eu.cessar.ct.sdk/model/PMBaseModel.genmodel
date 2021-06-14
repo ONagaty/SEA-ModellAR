@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/eu.cessar.ct.sdk/src"
+    modelPluginID="eu.cessar.ct.sdk" modelName="PMBaseModel" modelPluginClass="" updateClasspath="false"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false">
+  <foreignModel>PMBaseModel.ecore</foreignModel>
+  <genPackages prefix="pm" basePackage="eu.cessar.ct.sdk" disposableProviderFactory="true"
+      adapterFactory="false" contentTypeIdentifier="" ecorePackage="PMBaseModel.ecore#/">
+    <genClasses image="false" ecoreClass="PMBaseModel.ecore#//IPresentationModel"/>
+    <genClasses image="false" ecoreClass="PMBaseModel.ecore#//IPMPackage"/>
+    <genClasses image="false" ecoreClass="PMBaseModel.ecore#//IPMElement"/>
+    <genClasses image="false" ecoreClass="PMBaseModel.ecore#//IPMNamedElement"/>
+    <genClasses image="false" ecoreClass="PMBaseModel.ecore#//IPMContainerParent">
+      <genOperations ecoreOperation="PMBaseModel.ecore#//IPMContainerParent/isCompatibleWith">
+        <genParameters ecoreParameter="PMBaseModel.ecore#//IPMContainerParent/isCompatibleWith/qualifiedName"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="PMBaseModel.ecore#//IPMModuleConfiguration">
+      <genOperations ecoreOperation="PMBaseModel.ecore#//IPMModuleConfiguration/asCompatibileModuleConfiguration">
+        <genParameters ecoreParameter="PMBaseModel.ecore#//IPMModuleConfiguration/asCompatibileModuleConfiguration/qualifiedName"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="PMBaseModel.ecore#//IPMContainer">
+      <genOperations ecoreOperation="PMBaseModel.ecore#//IPMContainer/asCompatibileContainer">
+        <genParameters ecoreParameter="PMBaseModel.ecore#//IPMContainer/asCompatibileContainer/qualifiedName"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="PMBaseModel.ecore#//IPMChoiceContainer"/>
+    <genClasses image="false" ecoreClass="PMBaseModel.ecore#//IPMInstanceRef"/>
+    <genClasses ecoreClass="PMBaseModel.ecore#//MissingContainer">
+      <genOperations ecoreOperation="PMBaseModel.ecore#//MissingContainer/getShortName"/>
+      <genOperations ecoreOperation="PMBaseModel.ecore#//MissingContainer/isSetShortName"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="PMBaseModel.ecore#//IEMFProxyObject"/>
+  </genPackages>
+</genmodel:GenModel>

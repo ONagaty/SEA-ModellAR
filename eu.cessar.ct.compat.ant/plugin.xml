@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ant.core.antTasks">
+      <antTask
+            class="eu.cessar.ct.compat.ant.internal.CompatGenerateJetTask"
+            eclipseRuntime="true"
+            headless="true"
+            library="lib/cessar-compat-ant.jar"
+            name="mosart.generateJet">
+      </antTask>
+      <antTask
+            class="eu.cessar.ct.compat.ant.internal.CompatRunPlugetTask"
+            eclipseRuntime="true"
+            headless="true"
+            library="lib/cessar-compat-ant.jar"
+            name="mosart.runPluget">
+      </antTask>
+      <antTask
+            class="eu.cessar.ct.compat.ant.internal.CompatGetVariantTask"
+            eclipseRuntime="true"
+            headless="true"
+            library="lib/cessar-compat-ant.jar"
+            name="mosart.getVariant">
+      </antTask>
+      <antTask
+            class="eu.cessar.ct.compat.ant.internal.CompatConvertPath"
+            eclipseRuntime="true"
+            headless="true"
+            library="lib/cessar-compat-ant.jar"
+            name="mosart.convertPath">
+      </antTask>
+	</extension>
+   <extension
+         point="org.eclipse.ant.core.extraClasspathEntries">
+      <extraClasspathEntry
+            eclipseRuntime="true"
+            headless="true"
+            library="lib/cessar-compat-ant.jar">
+      </extraClasspathEntry>
+   </extension>
+</plugin>

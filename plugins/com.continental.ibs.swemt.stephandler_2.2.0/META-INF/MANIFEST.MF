@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Stephandler Plug-in
+Bundle-SymbolicName: com.continental.ibs.swemt.stephandler;singleton:=
+ true
+Bundle-Version: 2.2.0
+Bundle-Activator: com.continental.ibs.swemt.stephandler.Activator
+Bundle-Vendor: CONTINENTAL
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.co
+ re.resources
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.ui.actions
+Export-Package: com.continental.ibs.swemt.stephandler.extensionPoint
+Bundle-ClassPath: plugin.jar,protocol.jar
+

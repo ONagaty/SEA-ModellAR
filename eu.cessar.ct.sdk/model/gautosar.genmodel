@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="&lt;copyright>&#xD;&#xA;&#xD;&#xA;Copyright (c) Continental and others.&#xD;&#xA;All rights reserved. This program and the accompanying materials are made&#xD;&#xA;available under the terms of the Artop Software License Based on Released&#xD;&#xA;AUTOSAR Material (ASLR) which accompanies this distribution, and is available&#xD;&#xA;at http://www.artop.org/aslr.html&#xD;&#xA;&#xD;&#xA;Contributors: &#xD;&#xA;    Continental - Initial API and implementation&#xD;&#xA;&#xD;&#xA;&lt;/copyright>&#xD;&#xA;"
+    modelDirectory="/org.artop.aal.gautosar/src" editDirectory="/org.artop.aal.gautosar.edit/src"
+    editorDirectory="" modelPluginID="org.artop.aal.gautosar" templateDirectory="/org.artop.tools.metamodelgen/templates"
+    dynamicTemplates="true" modelName="gautosar" modelPluginClass="gautosar.Activator"
+    editPluginClass="gautosar.edit.Activator" nonNLSMarkers="true" rootExtendsClass="org.artop.ecl.emf.ecore.ExtendedEObjectImpl"
+    testsDirectory="" complianceLevel="5.0" suppressGenModelAnnotations="false" copyrightFields="false"
+    providerRootExtendsClass="org.artop.ecl.emf.edit.ExtendedItemProviderAdapter"
+    editPluginID="org.artop.aal.gautosar.edit">
+  <foreignModel>platform:/resource/org.artop.aal.gautosar/model/gautosar.ecore</foreignModel>
+  <templatePluginVariables>org.artop.tools.metamodelgen</templatePluginVariables>
+  <genPackages prefix="Gautosar" disposableProviderFactory="true" providerPackageSuffix="providers"
+      ecorePackage="gautosar.ecore#/">
+    <nestedGenPackages prefix="Ggenericstructure" disposableProviderFactory="true"
+        ecorePackage="gautosar.ecore#//ggenericstructure">
+      <nestedGenPackages prefix="Gprimitivetypes" disposableProviderFactory="true"
+          providerPackageSuffix="providers" ecorePackage="gautosar.ecore#//ggenericstructure/gprimitivetypes">
+        <genDataTypes ecoreDataType="gautosar.ecore#//ggenericstructure/gprimitivetypes/String"/>
+        <genDataTypes ecoreDataType="gautosar.ecore#//ggenericstructure/gprimitivetypes/Boolean"/>
+        <genDataTypes ecoreDataType="gautosar.ecore#//ggenericstructure/gprimitivetypes/Float"/>
+        <genDataTypes ecoreDataType="gautosar.ecore#//ggenericstructure/gprimitivetypes/Integer"/>
+        <genDataTypes ecoreDataType="gautosar.ecore#//ggenericstructure/gprimitivetypes/DateTime"/>
+        <genDataTypes ecoreDataType="gautosar.ecore#//ggenericstructure/gprimitivetypes/UnlimitedNatural"/>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Ginfrastructure" disposableProviderFactory="true"
+          providerPackageSuffix="providers" ecorePackage="gautosar.ecore#//ggenericstructure/ginfrastructure">
+        <genClasses image="false" ecoreClass="gautosar.ecore#//ggenericstructure/ginfrastructure/GARObject">
+          <genOperations ecoreOperation="gautosar.ecore#//ggenericstructure/ginfrastructure/GARObject/getChecksum"/>
+          <genOperations ecoreOperation="gautosar.ecore#//ggenericstructure/ginfrastructure/GARObject/setChecksum">
+            <genParameters ecoreParameter="gautosar.ecore#//ggenericstructure/ginfrastructure/GARObject/setChecksum/value"/>
+          </genOperations>
+          <genOperations ecoreOperation="gautosar.ecore#//ggenericstructure/ginfrastructure/GARObject/getTimestamp"/>
+          <genOperations ecoreOperation="gautosar.ecore#//ggenericstructure/ginfrastructure/GARObject/setTimestamp">
+            <genParameters ecoreParameter="gautosar.ecore#//ggenericstructure/ginfrastructure/GARObject/setTimestamp/value"/>
+          </genOperations>
+        </genClasses>
+        <genClasses image="false" ecoreClass="gautosar.ecore#//ggenericstructure/ginfrastructure/GIdentifiable">
+          <genOperations ecoreOperation="gautosar.ecore#//ggenericstructure/ginfrastructure/GIdentifiable/getShortName"/>
+          <genOperations ecoreOperation="gautosar.ecore#//ggenericstructure/ginfrastructure/GIdentifiable/setShortName">
+            <genParameters ecoreParameter="gautosar.ecore#//ggenericstructure/ginfrastructure/GIdentifiable/setShortName/value"/>
+          </genOperations>
+          <genOperations ecoreOperation="gautosar.ecore#//ggenericstructure/ginfrastructure/GIdentifiable/getCategory"/>
+          <genOperations ecoreOperation="gautosar.ecore#//ggenericstructure/ginfrastructure/GIdentifiable/setCategory">
+            <genParameters ecoreParameter="gautosar.ecore#//ggenericstructure/ginfrastructure/GIdentifiable/setCategory/value"/>
+          </genOperations>
+          <genOperations ecoreOperation="gautosar.ecore#//ggenericstructure/ginfrastructure/GIdentifiable/getExtensions"/>
+          <genOperations ecoreOperation="gautosar.ecore#//ggenericstructure/ginfrastructure/GIdentifiable/getUuid"/>
+          <genOperations ecoreOperation="gautosar.ecore#//ggenericstructure/ginfrastructure/GIdentifiable/setUuid">
+            <genParameters ecoreParameter="gautosar.ecore#//ggenericstructure/ginfrastructure/GIdentifiable/setUuid/value"/>
+          </genOperations>
+        </genClasses>
+        <genClasses image="false" ecoreClass="gautosar.ecore#//ggenericstructure/ginfrastructure/GARPackage">
+          <genOperations ecoreOperation="gautosar.ecore#//ggenericstructure/ginfrastructure/GARPackage/getSubPackages"/>
+          <genOperations ecoreOperation="gautosar.ecore#//ggenericstructure/ginfrastructure/GARPackage/getElements"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="gautosar.ecore#//ggenericstructure/ginfrastructure/GAUTOSAR">
+          <genOperations ecoreOperation="gautosar.ecore#//ggenericstructure/ginfrastructure/GAUTOSAR/getMixed"/>
+          <genOperations ecoreOperation="gautosar.ecore#//ggenericstructure/ginfrastructure/GAUTOSAR/getArPackages"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="gautosar.ecore#//ggenericstructure/ginfrastructure/GPackageableElement"/>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Gecucparameterdef" disposableProviderFactory="true"
+        providerPackageSuffix="providers" ecorePackage="gautosar.ecore#//gecucparameterdef">
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GParamConfMultiplicity">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GParamConfMultiplicity/getLowerMultiplicityAsString"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GParamConfMultiplicity/setLowerMultiplicityAsString">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucparameterdef/GParamConfMultiplicity/setLowerMultiplicityAsString/value"/>
+        </genOperations>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GParamConfMultiplicity/getUpperMultiplicityAsString"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GParamConfMultiplicity/setUpperMultiplicityAsString">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucparameterdef/GParamConfMultiplicity/setUpperMultiplicityAsString/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GContainerDef">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GContainerDef/getPostBuildChangeable"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GContainerDef/setPostBuildChangeable">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucparameterdef/GContainerDef/setPostBuildChangeable/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GModuleDef">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GModuleDef/getRefinedModuleDef"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GModuleDef/setRefinedModuleDef">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucparameterdef/GModuleDef/setRefinedModuleDef/value"/>
+        </genOperations>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GModuleDef/getContainers"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GCommonConfigurationAttributes">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GCommonConfigurationAttributes/getOrigin"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GCommonConfigurationAttributes/setOrigin">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucparameterdef/GCommonConfigurationAttributes/setOrigin/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GConfigParameter">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GConfigParameter/getSymbolicNameValue"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GConfigParameter/setSymbolicNameValue">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucparameterdef/GConfigParameter/setSymbolicNameValue/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GConfigReference"/>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GParamConfContainerDef">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GParamConfContainerDef/getParameters"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GParamConfContainerDef/getReferences"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GParamConfContainerDef/getSubContainers"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GChoiceContainerDef">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GChoiceContainerDef/getChoices"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GBooleanParamDef"/>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GIntegerParamDef"/>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GFloatParamDef"/>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GEnumerationParamDef">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GEnumerationParamDef/getLiterals"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GEnumerationParamDef/getDefaultValue"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GEnumerationParamDef/setDefaultValue">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucparameterdef/GEnumerationParamDef/setDefaultValue/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GEnumerationLiteralDef"/>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GAbstractStringParamDef"/>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GStringParamDef"/>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GLinkerSymbolDef"/>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GFunctionNameDef"/>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GReferenceDef">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GReferenceDef/getDestination"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GReferenceDef/setDestination">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucparameterdef/GReferenceDef/setDestination/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GSymbolicNameReferenceDef"/>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GInstanceReferenceDef">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GInstanceReferenceDef/getDestinationType"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GInstanceReferenceDef/setDestinationType">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucparameterdef/GInstanceReferenceDef/setDestinationType/value"/>
+        </genOperations>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GInstanceReferenceDef/getDestinationContext"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GInstanceReferenceDef/setDestinationContext">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucparameterdef/GInstanceReferenceDef/setDestinationContext/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GForeignReferenceDef">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GForeignReferenceDef/getDestinationType"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GForeignReferenceDef/setDestinationType">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucparameterdef/GForeignReferenceDef/setDestinationType/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucparameterdef/GChoiceReferenceDef">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucparameterdef/GChoiceReferenceDef/getDestinations"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Gecucdescription" disposableProviderFactory="true"
+        providerPackageSuffix="providers" ecorePackage="gautosar.ecore#//gecucdescription">
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucdescription/GModuleConfiguration">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GModuleConfiguration/getDefinition"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GModuleConfiguration/setDefinition">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucdescription/GModuleConfiguration/setDefinition/value"/>
+        </genOperations>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GModuleConfiguration/getContainers"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucdescription/GContainer">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GContainer/getDefinition"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GContainer/setDefinition">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucdescription/GContainer/setDefinition/value"/>
+        </genOperations>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GContainer/getParameterValues"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GContainer/getReferenceValues"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GContainer/getSubContainers"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucdescription/GParameterValue">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GParameterValue/getDefinition"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GParameterValue/setDefinition">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucdescription/GParameterValue/setDefinition/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucdescription/GConfigReferenceValue">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GConfigReferenceValue/getDefinition"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GConfigReferenceValue/setDefinition">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucdescription/GConfigReferenceValue/setDefinition/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucdescription/GReferenceValue">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GReferenceValue/getValue"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GReferenceValue/setValue">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucdescription/GReferenceValue/setValue/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucdescription/GInstanceReferenceValue"/>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucdescription/GBooleanValue">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GBooleanValue/getValue"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GBooleanValue/setValue">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucdescription/GBooleanValue/setValue/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucdescription/GEnumerationValue">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GEnumerationValue/getValue"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GEnumerationValue/setValue">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucdescription/GEnumerationValue/setValue/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucdescription/GFloatValue">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GFloatValue/getValue"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GFloatValue/setValue">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucdescription/GFloatValue/setValue/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucdescription/GIntegerValue">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GIntegerValue/getValue"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GIntegerValue/setValue">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucdescription/GIntegerValue/setValue/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucdescription/GStringValue">
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GStringValue/getValue"/>
+        <genOperations ecoreOperation="gautosar.ecore#//gecucdescription/GStringValue/setValue">
+          <genParameters ecoreParameter="gautosar.ecore#//gecucdescription/GStringValue/setValue/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucdescription/GLinkerSymbolValue"/>
+      <genClasses image="false" ecoreClass="gautosar.ecore#//gecucdescription/GFunctionNameValue"/>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,6 @@
+
+# options to debug the presentation model
+
+eu.cessar.ct.runtime.ecuc/ecuc/model/loading/trace=true
+eu.cessar.ct.runtime.ecuc/ecuc/model/loading/trace/moduleDef=true
+eu.cessar.ct.runtime.ecuc/ecuc/model/loading/trace/moduleCfg=true

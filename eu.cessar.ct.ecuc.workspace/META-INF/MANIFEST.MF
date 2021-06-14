@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Export-Package: eu.cessar.ct.ecuc.workspace.cleanup,
+ eu.cessar.ct.ecuc.workspace.internal;x-friends:="eu.cessar.ct.ecuc.workspace.tests,eu.cessar.ct.workspace.tests",
+ eu.cessar.ct.ecuc.workspace.internal.consistencycheck.impl;x-friends:="eu.cessar.ct.workspace.tests",
+ eu.cessar.ct.ecuc.workspace.internal.sort;x-friends:="eu.cessar.ct.ecuc.workspace.tests",
+ eu.cessar.ct.ecuc.workspace.internal.sync.problems;x-friends:="eu.cessar.ct.ecuc.workspace.tests",
+ eu.cessar.ct.ecuc.workspace.internal.sync.rules;x-friends:="eu.cessar.ct.ecuc.workspace.tests",
+ eu.cessar.ct.ecuc.workspace.jobs,
+ eu.cessar.ct.ecuc.workspace.sort,
+ eu.cessar.ct.ecuc.workspace.sync,
+ eu.cessar.ct.ecuc.workspace.sync.changers
+Require-Bundle: eu.cessar.ct.core.mms,
+ org.artop.aal.workspace,
+ eu.cessar.ct.runtime.ecuc,
+ eu.cessar.ct.workspace;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 4.0.2.0M1
+Bundle-Localization: plugin
+Bundle-Vendor: %plugin.provider
+Bundle-Name: %plugin.name
+Bundle-Activator: eu.cessar.ct.ecuc.workspace.internal.CessarPluginActivator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: eu.cessar.ct.ecuc.workspace;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+
+

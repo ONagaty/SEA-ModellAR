@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Require-Bundle: org.apache.ant,
+ eu.cessar.ct.jet.core,
+ eu.cessar.ct.sdk,
+ eu.cessar.ct.core.platform,
+ eu.cessar.ct.runtime.ecuc,
+ eu.cessar.ct.sdk.ant
+Bundle-Vendor: %plugin.provider
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 4.0.3.4M2
+Bundle-Localization: plugin
+Bundle-Name: %plugin.name
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: eu.cessar.ct.jet.ant;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: eu.cessar.ct.jet.ant.internal;x-internal:=true

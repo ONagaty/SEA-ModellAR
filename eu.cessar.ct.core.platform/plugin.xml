@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="eu.cessar.ct.core.platform.sdkService" name="sdkService" schema="schema/sdkService.exsd"/>
+   <extension-point id="eu.cessar.ct.core.platform.TopicService" name="TopicService" schema="schema/TopicService.exsd"/>
+   <extension
+         id="eu.cessar.ct.core.platform.cessarnature"
+         name="%cessarnature.name"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="eu.cessar.ct.core.platform.nature.CessarNature">
+         </run>
+      </runtime>
+   </extension>
+
+</plugin>

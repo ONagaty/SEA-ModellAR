@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Export-Package: eu.cessar.ct.jet.core,
+ eu.cessar.ct.jet.core.compiler,
+ eu.cessar.ct.jet.core.compliance,
+ eu.cessar.ct.jet.core.debug,
+ eu.cessar.ct.jet.core.internal;x-friends:="eu.cessar.ct.jet.core.tests",
+ eu.cessar.ct.jet.core.internal.compiler;x-internal:=true,
+ eu.cessar.ct.jet.core.internal.compliance;x-internal:=true,
+ eu.cessar.ct.jet.core.internal.utils;x-internal:=true,
+ eu.cessar.ct.jet.core.runtime
+Require-Bundle: org.eclipse.emf.codegen,
+ org.objectweb.asm,
+ eu.cessar.ct.core.mms,
+ org.eclipse.jdt.debug,
+ org.eclipse.debug.core,
+ eu.cessar.ct.runtime.ecuc,
+ org.apache.commons.io
+Bundle-Vendor: %plugin.provider
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 4.0.2.0M1
+Bundle-Localization: plugin
+Bundle-Name: %plugin.name
+Bundle-ManifestVersion: 2
+Bundle-Activator: eu.cessar.ct.jet.core.internal.CessarPluginActivator
+Bundle-SymbolicName: eu.cessar.ct.jet.core;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+
+

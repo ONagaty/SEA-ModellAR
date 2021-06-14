@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.debug.core.sourceLocators">
+           <sourceLocator
+         class="eu.cessar.ct.pluget.debug.internal.PlugetSourceLocator"
+         id="eu.cessar.ct.pluget.debug.plugetSourceLocator"
+         name="Source Locator for Java API projects"/>
+   </extension>
+
+</plugin>

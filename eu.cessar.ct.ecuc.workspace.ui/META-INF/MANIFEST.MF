@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Export-Package: eu.cessar.ct.ecuc.workspace.ui.actions,
+ eu.cessar.ct.ecuc.workspace.ui.internal;x-internal:=true,
+ eu.cessar.ct.ecuc.workspace.ui.internal.providers;x-internal:=true,
+ eu.cessar.ct.ecuc.workspace.ui.internal.wizards;x-internal:=true,
+ eu.cessar.ct.ecuc.workspace.ui.internal.wizards.pages;x-internal:=true,
+ eu.cessar.ct.ecuc.workspace.ui.internal.wizards.pages.common;x-internal:=true,
+ eu.cessar.ct.ecuc.workspace.ui.internal.wizards.pages.config;x-internal:=true,
+ eu.cessar.ct.ecuc.workspace.ui.internal.wizards.pages.conversion;x-internal:=true,
+ eu.cessar.ct.ecuc.workspace.ui.internal.wizards.pages.def;x-internal:=true,
+ eu.cessar.ct.ecuc.workspace.ui.internal.wizards.pages.texts;x-internal:=true,
+ eu.cessar.ct.ecuc.workspace.ui.internal.wizards.sync
+Require-Bundle: eu.cessar.ct.core.mms,
+ eu.cessar.ct.core.platform.ui,
+ eu.cessar.ct.runtime.ecuc,
+ eu.cessar.ct.ecuc.workspace,
+ org.eclipse.sphinx.emf.workspace.ui,
+ org.artop.aal.workspace,
+ eu.cessar.ct.workspace.ui
+Bundle-Vendor: %plugin.provider
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 4.0.2.0M1
+Bundle-Localization: plugin
+Bundle-Name: %plugin.name
+Bundle-Activator: eu.cessar.ct.ecuc.workspace.ui.internal.CessarPluginActivator
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: eu.cessar.ct.ecuc.workspace.ui;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+
+

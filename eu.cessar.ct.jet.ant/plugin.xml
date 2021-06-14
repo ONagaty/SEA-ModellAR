@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ant.core.antTasks">
+      <antTask
+            class="eu.cessar.ct.jet.ant.internal.GenerateJetTask"
+            eclipseRuntime="true"
+            headless="true"
+            library="lib/jet-ant.jar"
+            name="cessar.generateJet">
+      </antTask>
+      <antTask
+            class="eu.cessar.ct.jet.ant.internal.CompileJetTask"
+            eclipseRuntime="true"
+            headless="true"
+            library="lib/jet-ant.jar"
+            name="cessar.compileJet">
+      </antTask>
+	</extension>
+   <extension
+         point="org.eclipse.ant.core.extraClasspathEntries">
+      <extraClasspathEntry
+            library="lib/jet-ant.jar">
+      </extraClasspathEntry>
+   </extension>
+
+</plugin>

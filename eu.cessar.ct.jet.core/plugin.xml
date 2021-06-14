@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.core.runtime.text"
+            file-extensions="jet,txtjet,hjet,hejet,cjet,javajet,xmljet,sjet,asmjet,marjet,800jet,810jet,830jet,850jet"
+            id="eu.cessar.ct.jet.core.contenttype"
+            name="%_UI_JetFiles_label"
+            priority="normal">
+      </content-type>
+   </extension>
+   <extension
+         point="eu.cessar.ct.runtime.cessarTask">
+      <task
+            factory="eu.cessar.ct.jet.core.runtime.JetTaskManagerFactory"
+            id="jet">
+      </task>
+   </extension>
+   <extension
+         id="eu.cessar.ct.jetRunner"
+         name="JetRunner application"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="eu.cessar.ct.jet.core.runtime.JetRunner">
+         </run>
+      </application>
+   </extension>
+   
+   <extension id="jetTemplateBreakpointMarker" 
+           point="org.eclipse.core.resources.markers">
+  <super type="org.eclipse.debug.core.breakpointMarker"/>
+  <persistent value="true"/>
+  <attribute name="org.eclipse.jdt.debug.core.caught"/>
+  <attribute name="org.eclipse.jdt.debug.core.uncaught"/>
+  <attribute name="org.eclipse.jdt.debug.core.checked"/>
+</extension>
+   <extension point="org.eclipse.debug.core.breakpoints">
+  <breakpoint
+    id="jetTemplateBreakpoint"
+    markerType="eu.cessar.ct.jet.core.jetTemplateBreakpointMarker"
+    class="eu.cessar.ct.jet.core.debug.JetTemplateBreakpoint">
+  </breakpoint>
+</extension>
+   <extension
+         point="eu.cessar.ct.core.platform.sdkService">
+      <service
+            provider="eu.cessar.ct.jet.core.internal.utils.ProjectUtilsJetServiceProvider"
+            serviceID="eu.cessar.ct.sdk.utils.ProjectUtils$JetService">
+      </service>
+   </extension>
+</plugin>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated cid -->
+      <package
+            uri="http://www.cessar.eu/cid"
+            class="eu.cessar.ct.cid.model.ModelPackage"
+            genModel="model/cid.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated cid -->
+      <parser
+            type="cid"
+            class="eu.cessar.ct.cid.model.util.ModelResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated cid -->
+      <package
+            uri="http://www.cessar.eu/cid/versioning"
+            class="eu.cessar.ct.cid.model.versioning.VersioningPackage"
+            genModel="model/cid.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated cid -->
+      <package
+            uri="http://www.cessar.eu/cid/datatypes"
+            class="eu.cessar.ct.cid.model.datatypes.DatatypesPackage"
+            genModel="model/cid.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated cid -->
+      <package
+            uri="http://www.cessar.eu/cid/elements"
+            class="eu.cessar.ct.cid.model.elements.ElementsPackage"
+            genModel="model/cid.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated cid -->
+      <parser
+            type="elements"
+            class="eu.cessar.ct.cid.model.elements.util.ElementsResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated cid -->
+      <factory
+            uri="http://www.cessar.eu/cid"
+            class="eu.cessar.ct.cid.model.provider.ModelItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated cid -->
+      <factory
+            uri="http://www.cessar.eu/cid/versioning"
+            class="eu.cessar.ct.cid.model.versioning.provider.VersioningItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated cid -->
+      <factory
+            uri="http://www.cessar.eu/cid/elements"
+            class="eu.cessar.ct.cid.model.elements.provider.ElementsItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.core.runtime.xml"
+            file-extensions="cid"
+            id="eu.cessar.ct.cid"
+            name="Cessar Integrated Descriptor"
+            priority="normal">
+         <describer
+               class="org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer">
+            <parameter
+                  name="elementNames"
+                  value="cid">
+            </parameter>
+            <parameter
+                  name="namespace"
+                  value="http://www.cessar.eu/cid">
+            </parameter>
+            <parameter
+                  name="kind"
+                  value="xml">
+            </parameter>
+         </describer>
+      </content-type>
+   </extension>
+   <extension
+         point="org.eclipse.sphinx.emf.metaModelDescriptors">
+      <descriptor
+            class="eu.cessar.ct.cid.model.CIDMetaModelDescriptor"
+            id="eu.cessar.ct.cid">
+      </descriptor>
+   </extension>
+
+</plugin>
